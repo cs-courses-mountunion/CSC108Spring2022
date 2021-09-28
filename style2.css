@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+    background: #fff;
+	font: .74em "Trebuchet MS", Verdana, Arial, sans-serif;
+	line-height: 1.5em; 
+}
+a {
+	color: #9f4e9F;
+	text-decoration: none;
+	border-bottom: 1px solid #CFCF9E;
+}
+
+a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #9f4e9F;
+}
+
+#wrap {
+margin: 20px;
+width: /*724px;1000px;*/ 872px;
+background: #fff url('cssimages/midbg2.jpg');
+background-repeat: repeat-y;
+}
+
+#top { 
+background: #fff url('cssimages/topbg2.jpg');
+height: 30px;
+}
+
+#content {
+padding: 0 40px 0 40px;
+}
+
+#bottom {
+
+background: #fff url('cssimages/botbg2.jpg');
+height: 30px;
+}
+
+#headercontainer {
+    width: 96%;
+}
+
+#headerleftjust, #headercentered, #headerrightjust {
+    /*border: solid 3px #fff;*/
+}
+
+#headerleftjust {
+    width: 30%;
+    float: left;
+    text-align: left;
+}
+
+#headerleftjusthome {
+    width: 55%;
+    float: left;
+    text-align: left;
+}
+
+#headercentered {
+    width: 25%;
+    float: left;
+    text-align: right;
+}
+
+#headerrightjust {
+    width: 42%;
+    float: right;
+    text-align: right;
+}
+
+#endofheader {
+    clear: both;
+}
+
+
+.header {
+height: 100px;
+background: #990B99 url('cssimages/purphidr2.jpg');
+}
+
+.header h1 { padding-left: 17px; padding-top: 22px; font-size: 26px; color: #FF0; }
+.header h1 a { font-size: 26px; color: #FFF; text-decoration: none;}
+.header h2 { padding-left: 17px; padding-top: 0px; font-size: 14px; color: #FFF; }
+
+.breadcrumbs { 
+    background: #F6F9FB; 
+	border-bottom: 1px solid #E1E1E1; 
+	padding: 5px;
+}
+	
+.middle {
+	float: left;
+	width: 59%;
+	margin: 0 10px;
+	padding: 1% 1%;
+	text-align: justify;
+}
+
+.middle ul {
+	padding: 20px 0 15px 20px;
+	margin:0;
+}
+
+.middle li {
+	margin-bottom:5px;
+}
+
+.middle blockquote {
+    margin-left: 30px;
+}
+
+.right {
+	float: left;
+	width: 30%;
+	margin: 0 10px;
+	padding: 1% 1%;
+	
+}
+
+.right ul {
+	padding: 20px 0 15px 20px;
+	margin:0;
+}
+
+.right li {
+	margin-bottom:5px;
+	list-style-type: square;
+	color: #991799;
+}
+
+.middle h2 { color: #991799; font-size: 20px; margin-bottom: 10px; margin-top: 10px;}
+.right h2 { color: #991799; font-size: 18px; margin-top: 15px;}
+
+
+#clear {
+	display: block;
+	clear: both;
+	width: 100%;
+	height:1px;
+	overflow:hidden;
+}
+
+#footer {
+	text-align: center;
+	color: #666;
+}
+/*
+*/
+
