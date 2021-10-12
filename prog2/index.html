@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>CSC 108 Program # 2 </title>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            2&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 1/31/22
+        </h2>
+		<h3> Due at the <em>END</em> of class or before.</h3>
+</center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Write a Processing program that draws three circles in a
+	400 x 400 drawing window that have different letters
+	drawn on them.&nbsp; The program should respond to mouse clicks on the circles by displaying
+	a word on screen that begins with the same letter as the one in the circle that was clicked
+	upon.&nbsp; The program should also respond to key presses on letters displayed in the 
+	circles by displaying the same word on screen that begins with the letter typed.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work just like <a href="prog2demo.zip" target="_blank"> 
+	this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the demo and
+	see how your program should work. <br/><br/>
+	Run this demo program and 
+	type the following keys:&nbsp; A, then B, then C, then the space bar.&nbsp; 
+	Then click the mouse on each circle and on the gray background of the drawing window.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then paste the 
+	following code into the editor window.&nbsp; Then change the parameters of the 
+	<code>size</code> function so that the display window is correct for this assignment.
+
+<pre>
+String firstLetter =  "A";
+String secondLetter = "B";
+String thirdLetter =  "C";
+
+
+void setup() {
+  size(80, 50);
+  smooth();
+
+  drawCircles();
+} // end of setup
+
+
+void draw() {
+
+    // handle a click of the mouse by the user
+    
+    
+    
+    // handle the user typing a key on the keyboard
+    
+    
+    
+} // end of draw
+
+
+void drawCircles() {
+  stroke(255);
+  fill(0);
+  textSize(84);
+
+  ellipse(110,  100, 80, 80);
+  ellipse(210,  100, 80, 80);
+  ellipse(310,  100, 80, 80);
+
+  fill(255);
+  text(firstLetter,  82, 130);
+  text(secondLetter, 182, 130);
+  text(thirdLetter, 282, 130);
+
+  stroke(204); 
+} // end of drawCircles
+</pre>
+
+</blockquote>
+
+<strong>Your Task:</strong>
+<blockquote>
+    First of all, change the program so that it displays your initials in the circles.&nbsp;
+	If you don't have a middle name or if your initials contain duplicate letters, choose other
+	letters so that three different letters are displayed in the circles.&nbsp; You must have
+	three different letters displayed by your program. <br/><br/>
+	
+	You must add code to the <code>draw</code> function of this program to respond to 
+	user input in the following manner.
+	<br/>
+	<ul>
+	    <li>When the user types a key on the keyboard,
+		    <blockquote>
+			    Set the background color of the window to 204, and call the
+				<code>drawCircles</code> function. &nbsp; Then use an <code>if</code>
+				statement to test the key that was typed &mdash; if that is either the 
+				upper-case version of the letter in the left circle, or the lower-case
+				version of that letter, then change the fill color to some color you like
+                and use the <code>text</code> function to display a word that starts with
+                the letter in the left circle at screen position (10, 370). <br/><br/>
+                Use more <code>if</code> statements to respond to key presses that correspond
+				to the letters shown in the other two circles.&nbsp; Use different colors
+				and be sure that each word displayed starts with the letters shown in
+				the circles. <br/><br/>
+				See Example 5-18 in the "Type" section of Chapter 5 in the 
+				<a href="../resources/oreillyAccessInstr.html" target="_blank">
+	            textbook</a> to see how to test for both the upper- and lower-case version
+				of a key.
+		    </blockquote>
+		</li>
+	    <li>When the user clicks the mouse,
+		    <blockquote>
+			    Set the background color of the window to 204, and call the
+				<code>drawCircles</code> function. &nbsp; Then use an <code>if</code>
+				statement to test the distance of the mouse position from the center of
+				the left-most circle &mdash; if that distance is less than half the size
+				of the circle, then change the fill color to some color you like
+                and use the <code>text</code> function to display the same word that starts with
+                the letter in the left circle as was used in the keyboard processing described
+				above.&nbsp; Display the word at screen position (10, 370). <br/><br/>
+                Use more <code>if</code> statements test to see if the mouse click occurred
+				inside the center or the right circle, and display the same word that was used
+				in the keyboard processing for that letter.&nbsp; Use the same color
+				for each word, no matter if it is displayed because of a mouse event or a 
+				keyboard event. <br/><br/>
+				See Example 5-14 in the "Location" section of Chapter 5 in the 
+				<a href="../resources/oreillyAccessInstr.html" target="_blank">
+	            textbook</a> to see how to test for a mouse position being less than a certain
+				distance from a point.
+		    </blockquote>
+		</li>
+	</ul>
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Place a comment header at the top of your program similar to this example, with information
+	specific to you and your assignment:
+	
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 2
+ * Author: Bill Gates
+ * Date:  January 31, 2025
+ ********************************/
+</pre>	
+</blockquote>
+
+<strong>Extras:</strong>
+<blockquote>
+    Instead of displaying a word that starts with the letter selected by the user, can you 
+	draw a sketch of something that starts with that letter?&nbsp; For example, you might
+	draw a picture of an apple, or a bear, or a cat if your initials are ABC.
+	<br/><br/>
+	Can you use a square or a rectangle or some other shape other than a circle to contain
+	your letters?&nbsp; You'll have to change the way you detect a mouse click inside the
+	shape, because the technique described above and shown in Example 5-14 only works for a
+	circle.&nbsp; Give it a try!
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program2</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+    <br/><br/>
+</blockquote>
+
+</body>
+
+</html>
