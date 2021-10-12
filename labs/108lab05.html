@@ -1,0 +1,282 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 5</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 5&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; February 21, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Arrays, and a 3D Demo <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB05</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+  <li> Start reading Chapter 11, entitled "Arrays", in the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a>; read the text and try
+       the code from Examples 11-1, 11-2 and 11-3 &mdash; actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.&nbsp;DON'T JUST RUN THE CODE &mdash;
+	   try to understand how it works.<br/><br/>
+	   <b>Exercise 11-1:</b><br/>
+<textarea rows="6" cols="50">
+float x1 = -20;
+float x2 = 20;
+
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+
+void draw() {
+  background(0);
+  x1 += 0.5;
+  x2 += 0.5;
+  arc(x1, 30, 40, 40, 0.52, 5.76);
+  arc(x2, 90, 40, 40, 0.52, 5.76);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 11-2:</b><br/>
+<textarea rows="6" cols="50">
+float x1 = -10;
+float x2 = 10;
+float x3 = 35;
+float x4 = 18;
+float x5 = 30;
+
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+
+void draw() {
+  background(0);
+  x1 += 0.5;
+  x2 += 0.5;
+  x3 += 0.5;
+  x4 += 0.5;
+  x5 += 0.5;
+
+  arc(x1, 20, 20, 20, 0.52, 5.76);
+  arc(x2, 40, 20, 20, 0.52, 5.76);
+  arc(x3, 60, 20, 20, 0.52, 5.76);
+  arc(x4, 80, 20, 20, 0.52, 5.76);
+  arc(x5, 100, 20, 20, 0.52, 5.76);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 11-3:</b><br/>
+<textarea rows="6" cols="50">
+float[] x = new float[3000];
+
+void setup() {
+  size(240, 120);
+  noStroke();
+  fill(255, 200);
+  for (int i = 0; i &lt; x.length; i++) {
+    x[i] = random(-1000, 200);
+  }
+}
+
+void draw() {
+  background(0);
+  for (int i = 0; i &lt; x.length; i++) {
+    x[i] += 0.5;
+    float y = i * 0.4;
+    arc(x[i], y, 12, 12, 0.52, 5.76);
+  }
+}
+</textarea>
+<br/><br/>
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB05a</b></em>, <em><b>LAB05b</b></em>, etc. <br/><br/> </li>
+
+  <li> Modify the program from Example 11-3 so that the array <code>x</code> contains 1000
+	   elements.&nbsp; Then as the second statement in the file, declare a second array named
+	   <code>y</code> as an array of <code>float</code> values that also has 1000 elements.&nbsp;
+	   Next, inside the <code>for</code> loop in the <code>setup</code> function, set the 
+	   value in <code>y[i]</code> to a random value between 0 and 120.&nbsp; Then in the
+	   <code>draw</code> function, delete the line that starts "<code>float y =</code>", and
+	   then change the second parameter in the <code>arc</code> 
+	   function call so that it is <code>y[i]</code>.&nbsp; Run the program and verify that
+	   a large number of PacMen are moving horizontally across the output window.
+	   <br><br> </li>
+
+  <li> <span class="yellow">
+       Now make changes that will cause the value of <code>x[i]</code> and <code>y[i]</code>
+	   to change randomly in the <code>draw</code> function.&nbsp; Replace the <code>0.5</code>
+	   in the statement that changes <code>x[i]</code> with a call to the <code>random</code>
+	   function that generates a value between 0.1 and 2.5.&nbsp; Then add a new statement to
+	   the program located immediately before the <code>arc</code> statement that adds
+	   a randomly-generated value to <code>y[i]</code> that is between -2 and 2.&nbsp; 
+	   Run your program and notice the random movement of the PacMen.&nbsp; Then change the
+	   value being added to <code>x[i]</code> so that it is a value between &ndash;1.1 and 2.5.&nbsp;
+	   Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Move ahead in the textbook to the section entitled "Repetition and
+       Arrays".&nbsp; Copy the following code that appears at the top of this section of the text into the Processing editor window
+	   and run it to verify that the output is as predicted in the comments in the code.
+<pre>
+int[] x = new int[2];     // Declare and create the array
+println(x.length);        // Prints 2 to the Console
+
+int[] y = new int[1972];  // Declare and create the array
+println(y.length);        // Prints 1972 to the Console
+</pre>	   
+
+	   Run Example 11-8 from the textbook.&nbsp; Then change the size of the
+	   output window so that it is 240 &times; 600 and run the program again.&nbsp; Then make
+	   the output window 720 &times; 600.
+       <br/><br/>
+	   <b>Exercise 11-8:</b><br/>
+<textarea rows="6" cols="50">
+float[] gray;
+
+void setup() {
+  size(240, 120);
+  gray = new float[width];
+  for (int i = 0; i &lt; gray.length; i++) {
+    gray[i] = random(0, 255);
+  }
+}
+
+void draw() {
+  for (int i = 0; i &lt; gray.length; i++) {
+    stroke(gray[i]);
+    line(i, 0, i, height);
+  }
+}
+</textarea>
+       <br/><br/> </li>
+
+  <li> Make the following changes:&nbsp; rename the array called <code>gray</code> so that it
+       is named <code>red</code> (you'll need to make six changes to the program to accomplish
+	   this).&nbsp; Next, add two more arrays of <code>float</code> values to the program, one
+	   called <code>green</code> and another called <code>blue</code>.&nbsp; Declare both
+	   of these arrays at the top of the program, instantiate them so that they have the
+	   same number of slots as <code>red</code> does using the <code>new</code>
+	   keyword inside <code>setup</code>, and then store a 
+	   random value between 0 and 255 in them
+	   inside the for loop.&nbsp; Then change the <code>stroke</code> function call in 
+	   your <code>draw</code> function so that it uses three values to set the stroke color.
+	   &nbsp; When you run the program, you should see a bunch of multi-colored lines, not just
+	   shades of gray.
+       <br><br> </li>
+
+  <li> Add yet another array of <code>float</code> values to the program
+	   called <code>x</code>.&nbsp; This array should have the same number of slots as
+	   the other three arrays, and in the loop in the <code>setup</code> function, 
+	   you should store the value <code>i</code> in <code>x[i]</code>.&nbsp; In the <code>
+	   line</code> function call in your <code>draw</code> function, change the two occurrences
+	   of <code>i</code> to <code>x[i]</code>.&nbsp; When you run this program, you should notice
+	   no difference in the output -- it should still be a bunch of multi-colored vertical 
+	   lines on the screen.
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Now change the program so that three new specific things are added to the existing
+	   program as the first
+	   three actions inside the 
+	   <code>for</code> loop of your <code>draw</code> function.&nbsp; First of all, set
+	   the stroke color to black.&nbsp; Secondly, draw a line from (<code>x[i]</code>, 0) to 
+	   (<code>x[i]</code>, 100).&nbsp; Thirdly, add a randomly-generated value between 0.1 and
+	   4.5 to <code>x[i]</code>.&nbsp; Running the program now should show colored lines moving 
+	   haphazardly off the window to the right.
+	   <br/><br/>
+	   Then declare a single <code>int</code> variable (not an array) at the top of the 
+	   file named <code>direction</code> and give it a starting value of 1.&nbsp; Change the value
+	   being added to <code>x[i]</code> in the <code>draw</code> function so that it is 
+	   <code>direction</code> times a 
+	   random value between 0.1 and 4.5.&nbsp; Then copy the following code and paste it into
+	   <code>draw</code> immediately before the final <code>}</code> symbol in your file:
+<pre>
+if (x[0] > width || x[width-1] &lt; 0) {
+  direction = -direction;
+}
+</pre>	   
+	   Show your results 
+	   to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Copy Example 11-9 from the textbook into a Processing sketch.&nbsp; 
+       Then change the size of the output window so that it is 720 &times; 600.&nbsp; Run
+	   the program &mdash; pretty nice, isn't it?!?
+       <br/><br/>
+	   <b>Exercise 11-9:</b><br/>
+<textarea rows="6" cols="50">
+int num = 60;
+int[] x = new int[num];
+int[] y = new int[num];
+
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+
+void draw() {
+  background(0);
+
+  // Copy array values from back to front
+  for (int i = x.length-1; i > 0; i--) {
+    x[i] = x[i-1];
+    y[i] = y[i-1];
+  }
+  
+  x[0] = mouseX;  // Set the first element
+  y[0] = mouseY;  // Set the first element
+
+  for (int i = 0; i &lt; x.length; i++) {
+    fill(i * 4);
+    ellipse(x[i], y[i], 40, 40);
+  }
+  
+} // end of draw
+</textarea>
+       <br/><br/> </li>
+
+  <li> <span class="yellow">
+       Add an <code>if</code> statement to the bottom of the <code>draw</code> function
+	   (be careful to add this inside the final <b><code>}</code></b> symbol) that tests to see
+	   if the mouse has been pressed, and if so, sets <code>x[0]</code> and
+	   <code>y[0]</code> to -100.&nbsp; Run the program and move the mouse around, then
+	   hold down the mouse button and drag the mouse around.&nbsp; The circles should disappear
+	   when you drag the mouse, and reappear when you just move the mouse without holding
+	   down a button.&nbsp; Show your program to your instructor when it works like this.
+	   </span>
+       <br><br> </li>
+
+   <li> Now for some fun without much explanation.&nbsp; Visit 
+        <a href="http://www.openprocessing.org" target="_blank"> http://www.openprocessing.org</a>,
+		scroll down to the "Sketches that are loved this week" and click the link to "See all".&nbsp; 
+		Click on different demos to see some of the really interesting and fun 
+		things that can be done with Processing
+		programs.
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Show your instructor your favorite demo from <b>openprocessing.org</b> and
+	   explain why it is your favorite.
+	   </span>
+       <br><br> </li>
+
+</ol>
+</body>
+</html>

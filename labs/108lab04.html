@@ -1,0 +1,477 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 4</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 4&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; February 14, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Images, Motion, Randomness <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Several exercises in this lab will use media files that have been downloaded for you
+	   and that have been converted into a .zip file.&nbsp; You will need to unzip the files
+	   to be able to use them in this lab. <br/><br/>
+	   <ol type="a">
+       <li>
+	   Right-click on this link to the <a href="lab04files.zip" target="_blank"> lab04files.zip</a> file
+	   and choose "Save File as..." from the pop-up menu.&nbsp; Browse to your CSC108 folder and save the 
+	   zip file.
+       <br/><br/>
+	   </li>
+	   <li>Launch File Explorer (the icon at the bottom of the screen that looks like this: 
+	   <img src="108lab04FileExplorer.png"/> ).&nbsp; Browse to your CSC108 folder, then right-click 
+	   on the .zip file you just saved, and choose "Extract all" from the pop-up menu.&nbsp; Make sure 
+	   that the files will be extracted into a folder in your CSC108 folder, and check the box that 
+	   says "Show extracted files when complete".&nbsp; Then click the "Extract" button.&nbsp; A new 
+	   File Explorer window will appear, showing the files that you will need at various points in this
+	   lab activity.&nbsp; Leave the File Explorer window open on your
+	   desktop. &ndash; we'll use this folder whenever prompted by the textbook
+	   or the lab instructions to find or use a file.&nbsp; Ask your instructor for help if you need it
+	   to extract the files from the .zip file<br/><br/>
+	   </li>
+	   </ol>
+
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB04</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+  <li> Processing is capable of drawing more than simple lines and shapes.&nbsp; We will now learn how 
+       to load image files and fonts into our programs to extend the visual possibilities to 
+	   photography, detailed diagrams, and different typefaces.<br/><br/>
+	   
+	   Using the sketch you just created, select <b>Add File</b> from the Sketch menu.&nbsp; Find the
+	   <code>lunar.jpg</code> file in the folder you just unzipped and select it.&nbsp; If everything 
+	   went well, the Message Area will read "One file added to the sketch."<br/><br/>
+
+       To check for the file, select <b>Show Sketch Folder</b> in the Sketch menu.&nbsp; You should see 
+	   a folder named <b>data</b>, with a copy of <code>lunar.jpg</code> inside.&nbsp; When you add a file 
+	   to the sketch, the <b>data</b> folder will automatically be created.&nbsp; Instead of using the 
+	   <b>Add File</b> menu command, you can do the same thing by dragging files into the editor 
+	   area of the Processing window.&nbsp; The files will be copied to the data folder the same way 
+	   (and the data folder will be created if none exists).<br/><br/>
+
+       You can also create the data folder outside of Processing and copy files there yourself.&nbsp; You 
+	   won't get the message saying that files have been added, but this is a helpful method when you're 
+	   working with large numbers of files.<br/><br/>
+	   
+  <li> Start with the "Images" section in Chapter 7 of the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a> and work through Examples 7-1 and 7-2
+	   &mdash; actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.&nbsp;DON'T JUST RUN THE CODE &mdash;
+	   try to understand how it works.
+	   <br/><br/>
+	   If you get an error message that says "Null Pointer Exeption", you most likely did not
+	   perform the "Add Files" operation correctly to add the image file to your processing 
+	   sketch.&nbsp; You must
+	   add the media file that is used in the example program you are trying to run to the sketch
+	   before running the examples in this section.&nbsp; If you use the "Add Files" option of the
+	   "Sketch" menu, that'll fix the Null Pointer Exeption error.
+	          <br/><br/>
+	   <b>Exercise 7-1:</b><br/>
+<textarea rows="6" cols="50">
+PImage img;
+
+void setup() {
+  size(480, 120);
+  img = loadImage("lunar.jpg");
+}
+
+void draw() {
+  image(img, 0, 0);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 7-2:</b><br/>
+<textarea rows="6" cols="50">
+PImage img1;
+PImage img2;
+
+void setup() {
+  size(480, 120);
+  img1 = loadImage("lunar.jpg");
+  img2 = loadImage("capsule.jpg");
+}
+
+void draw() {
+  image(img1, -120, 0);
+  image(img1, 130, 0, 240, 120);
+  image(img2, 300, 0, 240, 120);
+}
+</textarea>
+<br/><br/>
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB04a</b></em>, <em><b>LAB04b</b></em>, etc. <br/><br/> </li>
+
+  <li> <span class="yellow">
+       Create a brand new Processing sketch and name it "Initials".&nbsp; Copy the code from
+	   Example 7-2 in the textbook and paste it into the editor window.&nbsp; You will
+	   change this code so that three images will be displayed side by side in the output window.
+	   <br/><br/>
+       In the "lab04files" folder you unzipped earlier, there is a
+	   folder named "Letters".&nbsp; Use the "Add Files" option of the "Sketch" menu to add three
+	   of the image files in this folder to your sketch that correspond to your initials (if you 
+	   have repeated initials, BBC for example, then you only need to add two files to your
+	   sketch).&nbsp; Then change the code example so that the images representing your initials
+	   are displayed in the output window.&nbsp; Each of the files is 160 pixels &times;
+	   120 pixels, so they will fit exactly in the window, because it is sized 480 &times; 120.
+	   &nbsp; When you have achieved this, show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Save the "Initials" sketch, and start a brand-new empty Processing sketch to continue
+       with this lab.&nbsp; Go back to Chapter 7 of the textbook and then copy and run Examples 7-3, 
+	   7-4 and 7-5.
+       <br/><br/>
+	   <b>Exercise 7-3:</b><br/>
+<textarea rows="6" cols="50">
+PImage img;
+
+void setup() {
+  size(480, 120);
+  img = loadImage("lunar.jpg");
+}
+
+void draw() {
+  background(0);
+  image(img, 0, 0, mouseX * 2, mouseY * 2);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 7-4:</b> &mdash; note:&nbsp; add the file "clouds.gif" to the sketch before running this code.<br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(480, 120);
+  img = loadImage("clouds.gif");
+}
+
+void draw() {
+  background(255);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 7-5:</b>  &mdash; note:&nbsp; add the file "clouds.png" to the sketch before running this code.<br/>
+<textarea rows="6" cols="50">
+PImage img;
+
+void setup() {
+  size(480, 120);
+  img = loadImage("clouds.png");
+}
+
+void draw() {
+  background(204);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}
+</textarea>
+<br/><br/> </li>
+
+  <li> Open the sketch file "Initials" from where you saved it earlier, and make modifications
+       to the file as described here.&nbsp; First of all, in the <code>setup</code> function,
+	   increase the vertical size of the
+	   output window to 480.&nbsp; Next, set the background of the screen to 
+	   black as the first statement in the <code>draw</code> function.
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Now change each of the <code>image</code> statements in your <code>draw</code> function so
+	   that it uses the five-parameter style shown in Example 7-3.&nbsp; The fourth 
+       parameter is the width of the image being displayed, and the fifth parameter is the height
+	   of the image.&nbsp; In each of the <code>image</code> statements in your program,
+	   the fourth parameter should be a fixed number that represents one-third of the width
+	   of the display window.&nbsp; Then make the fifth parameter use an expression that uses
+	   <code>mouseY</code> so that the images grow or shrink vertically as the mouse is moved around 
+	   the window.&nbsp;Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Save the "Initials" sketch, and start a brand-new empty Processing sketch to continue
+       with this lab.&nbsp; Go to the "Frames" section of Chapter 8 in the textbook, read the 
+	   text and try Examples
+	   8-1 and 8-2.<br/><br/>
+	   <b>Exercise 8-1:</b><br/>
+<textarea rows="4" cols="50">
+void draw() {
+  println(frameRate);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-2:</b> <br/>
+<textarea rows="4" cols="50">
+void setup() {
+  frameRate(30);    // Thirty frames each second
+  //frameRate(12);  // Twelve frames each second
+  //frameRate(2);   // Two frames each second
+  //frameRate(0.5); // One frame every two seconds
+}
+
+void draw() {
+  println(frameRate);
+}
+</textarea>
+<br/><br/>
+	   Then 
+	   continue to the next section in the text and experiment with Examples 8-3, 8-4 and 8-5.
+       <br/><br/>
+	   <b>Exercise 8-3:</b><br/>
+<textarea rows="6" cols="50">
+int radius = 40;
+float x = -radius;
+float speed = 0.5;
+
+void setup() {
+  size(240, 120);
+  ellipseMode(RADIUS);
+}
+
+void draw() {
+  background(0);
+  x += speed;  // Increase the value of x
+  arc(x, 60, radius, radius, 0.52, 5.76);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-4:</b> <br/>
+<textarea rows="6" cols="50">
+int radius = 40;
+float x = -radius;
+float speed = 0.5;
+
+void setup() {
+  size(240, 120);
+  ellipseMode(RADIUS);
+}
+
+void draw() {
+  background(0);
+  x += speed;  // Increase the value of x
+  if (x > width+radius) {  // If the shape is off screen,
+    x = -radius;  // move to the left edge
+  }
+  arc(x, 60, radius, radius, 0.52, 5.76);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-5:</b><br/>
+<textarea rows="6" cols="50">
+int radius = 40;
+float x = 110;
+float speed = 0.5;
+int direction = 1;
+
+void setup() {
+  size(240, 120);
+  ellipseMode(RADIUS);
+}
+
+void draw() {
+  background(0);
+  x += speed * direction;
+  if ((x > width-radius) || (x &lt; radius)) {
+    direction = -direction; // Flip direction
+  }
+  if (direction == 1) {
+    arc(x, 60, radius, radius, 0.52, 5.76); // Face right
+  } else {
+    arc(x, 60, radius, radius, 3.67, 8.9);  // Face left
+  }
+}
+</textarea>
+<br/><br/> </li>
+
+  <li> Starting with the code for Example 8-5, make the following changes:&nbsp; the first three
+       lines of the program from the textbook should be changed to look like this:
+<pre>
+int radius = 120;
+float y = 300;
+float speed = 1.5;
+</pre>	   
+       Then change the <code>size</code> function call in the <code>setup</code> function
+	   so that the output window is 160 pixels wide and 720 tall.&nbsp; Don't run the program 
+	   yet -- it won't work because our changes are incomplete.
+       <br><br> </li>
+
+  <li> Now change the program so that the PacMan image moves up and down on the screen
+       instead of left and right.&nbsp; There are several changes that need to be made in
+	   the <code>draw</code> function in order for this to happen &mdash; any line that 
+	   refers to <code>x</code> should be changed to use the variable <code>y</code>
+	   instead.&nbsp; The <code>draw</code> function should add <code>speed*direction</code>
+	   to <code>y</code>, then test <code>y</code> to see if it is either greater than
+	   <code>height&ndash;radius</code> or less than zero.&nbsp; The other changes that should be 
+	   made are that the two <code>arc</code> function calls need to have a fixed value for
+	   the first parameter, and use <code>y</code> as the second parameter.&nbsp; When you make
+	   these changes and run the program, the PacMan should move up and down in the output 
+	   window.
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Now change the program so that instead of drawing a PacMan, it uses an image of an 
+	   upward-pointing arrow when the movement is toward the top of the window and an image
+	   of a downward-pointing arrow when moving toward the bottom of the screen.&nbsp;
+	   There are two image files in the "lab04files" folder named <b>arrowUp.png</b> and
+	   <b>arrowDown.png</b> &mdash; use the "Add Files" option of the "Sketch" menu to add
+	   these files to your Processing sketch now.&nbsp; Then refer back to the Examples we tried
+	   in Chapter 7 to draw the images.&nbsp; You will need to replace the <code>arc</code> statements
+	   in your program with <code>image</code> statements that draw the appropriate 
+	   <code>PImage</code> objects when direction is 1 or not.&nbsp; Show your results 
+	   to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> <span class="yellow">
+       Add code to your program that causes the direction to be changed whenever the user
+	   clicks the left mouse button.&nbsp; When the user clicks the right mouse button, nothing
+	   should happen.&nbsp; Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Save your sketch, and start a brand-new empty Processing sketch to continue
+       with this lab.&nbsp; Go to the "Random" section of Chapter 8 of the textbook, read the text 
+	   and try Examples
+	   8-7, 8-8 and 8-9.<br/><br/>
+	   <b>Exercise 8-7:</b><br/>
+<textarea rows="4" cols="50">
+void draw() {
+  float r = random(0, mouseX);
+  println(r);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-8:</b> <br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(240, 120);
+}
+
+void draw() {
+  background(204);
+  for (int x = 20; x &lt; width; x += 20) {
+    float mx = mouseX / 10;
+    float offsetA = random(-mx, mx);
+    float offsetB = random(-mx, mx);
+    line(x + offsetA, 20, x - offsetB, 100);
+  }
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-9:</b><br/>
+<textarea rows="6" cols="50">
+float speed = 2.5;
+int diameter = 20;
+float x;
+float y;
+
+void setup() {
+  size(240, 120);
+  x = width/2;
+  y = height/2;
+}
+
+void draw() {
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  ellipse(x, y, diameter, diameter);
+}
+</textarea>
+<br/><br/>
+	   Then 
+	   copy the <code>draw</code> function shown here and paste 
+	   it into your latest sketch replacing the <code>draw</code> function that you were using.
+	   <br/><br/>
+	   
+<textarea rows="6" cols="50">
+void draw() {
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+  ellipse(x, y, diameter, diameter);
+}
+</textarea>
+       <br><br> </li>
+
+  <li> Write a Processing program that draws a line from the center of the output window
+       to a random location in the window.&nbsp; The output window should be sized to be
+	   600 &times; 600 pixels.&nbsp; If the user presses any key on the keyboard,
+       the screen should be cleared by calling the <code>background</code> function using
+	   204 as the parameter. <br/><br/>
+	   
+	   Hint:&nbsp; with this size window, the center would be at the point (300, 300), so you should use that as one endpoint of the line you are drawing, and the other endpoint should be random values in the range from 0 to 600 for both the x and y values.&nbsp; How long would it take for your output window to fill
+	   up completely with black pixels?
+	   <br><br> </li>
+
+  <li> <span class="yellow">
+       Change your program so that the lines that are drawn using random colors.&nbsp;
+	   Declare three <code>float</code> variables named <code>r</code>, <code>g</code> and
+	   <code>b</code>, and inside the <code>draw</code> function, set each one of these 
+	   variables to a random value between 0 and 255;&nbsp; Then put the following statement
+	   inside your <code>draw</code> function:
+<pre>
+stroke(r, g, b);
+</pre>
+	   Show the results of your programming to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Go to the section in Chapter 8 of the textbook entitled "Timers" and try Examples
+	   8-10 and 8-11.
+       <br/><br/>
+	   <b>Exercise 8-10:</b><br/>
+<textarea rows="4" cols="50">
+void draw() {
+  int timer = millis();
+  println(timer);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 8-11:</b> <br/>
+<textarea rows="6" cols="50">
+int time1 = 2000;
+int time2 = 4000;
+float x = 0;
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  int currentTime = millis();
+  background(204);
+  if (currentTime > time2) {
+    x -= 0.5;
+  } else if (currentTime > time1) {
+    x += 2;
+  }
+  ellipse(x, 60, 90, 90);
+}
+</textarea>
+<br/><br/> </li>
+
+  <li> <span class="yellow">
+       Modify the program from Example 8-11 so that it works like this:&nbsp; if the current
+	   time is greater than 7000 milliseconds, subtract one from x.&nbsp; Otherwise, if the 
+	   current time is less than 4000 milliseconds, add one to x.&nbsp; Otherwise, add a
+	   random value between -20 and 20 to x.&nbsp; Then draw an ellipse as was done in
+	   the given program.&nbsp; Run your program and show the results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+</ol>
+</body>
+</html>

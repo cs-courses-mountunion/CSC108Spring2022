@@ -1,0 +1,387 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 3</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 3&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; February 7, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Repetition with <code>for</code> loops <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB03</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+he section entitled "Repetition" in Chapter 4 of the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a>, read the text and try
+       the code from Example 4-6&mdash; actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.&nbsp;DON'T JUST RUN THE CODE &mdash;
+	   try to understand how it works.<br/><br/>
+	   <b>Exercise 4-6:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+strokeWeight(8);
+for (int i = 20; i &lt; 400; i += 60) {
+  line(i, 40, i + 60, 80);
+}
+</textarea>
+<br/><br/>
+
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB03a</b></em>, <em><b>LAB03b</b></em>, etc. <br/><br/> </li>
+
+  <li> Change the <code>line</code> function call in your program so that it looks like this:
+<pre>
+    line( i+60, 40, i, 80);
+</pre>
+       When you run this program, the results differ from the original version.&nbsp; WHY?!?
+	   <br/><br/> </li> 
+
+  <li> <span class="yellow">
+       Change the program you are working on so that the lines drawn are straight up and down.
+	   &nbsp; When you have achieved this, show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Go back to the textbook and read the material after Example 4-6.&nbsp; Then 
+       complete Examples 4-7 and 4-8.&nbsp; Run the program and move the mouse
+       around the window to see what happens with the arrow and the line.&nbsp; Be sure you understand why the
+	   results of the two programs are different.
+       <br/><br/>
+	   <b>Exercise 4-7:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+strokeWeight(2);
+for (int i = 20; i &lt; 400; i += 8) {
+  line(i, 40, i + 60, 80);
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 4-8:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+strokeWeight(2);
+for (int i = 20; i &lt; 400; i += 20) {
+  line(i, 0, i + i/2, 80);
+}
+</textarea>
+<br/><br/> </li>
+
+  <li> Copy this code into the Processing editor window:
+<pre>
+for (int i = 6; i &lt;= 9; i++) {
+    print("This time i = ");
+    println(i);
+    print("\t i squared = ");
+    println(i*i);
+}
+println("program concluded.");
+</pre>  
+       Run the program and observe the output printed in the Console.&nbsp; Then change the
+	   program so that it prints the squares of the multiples of 3 between 27 and 42, inclusive.&nbsp;
+	   Hint:&nbsp; you should only make changes to the heading of the <code>for</code> loop, not
+	   to the loop body.
+       <br><br> </li>
+	   
+<li> <span class="yellow">
+       Add code to the loop in your current program so that it prints the cube of each of the
+	   <b><code>i</code></b> values, on a separate line immediately following the square of each of the values.&nbsp;
+	   Then change the loop heading so that your program prints the squares and cubes of the multiples
+	   of 4 between 8 and 28.&nbsp; Show your program
+	   to your instructor when you get it working properly.
+	 </span>
+	   <br><br> </li>
+
+  <li> Copy this code into the Processing editor window:
+<pre>
+int howManyCircles = 4;
+
+void setup() {
+    size(500, 500);
+    fill(255, 255, 0);
+    stroke(0, 0, 102);
+	frameRate(8);
+} // end setup
+
+void draw() {
+    background(0, 0, 102);
+    int x = 40;
+
+    for (int i = 1; i &lt;= howManyCircles; i++) {
+        ellipse(x, 40, 45, 45);
+        x = x + 50;
+    } // end for
+} // end draw
+</pre>  
+       Run the program and observe the results.&nbsp; Then change the
+	   program so that it draws 8 circles.
+       <br><br> </li>
+	   
+<li>
+       Modify the program so that it draws green circles that are displayed going down 
+	   the left side of the window, not across the top.&nbsp; Change the program
+	   so that five green circles are drawn going down the screen.
+	   <br><br> </li>
+	   
+<li> <span class="yellow">
+       Modify the program so that it draws green circles that are displayed going down and
+       to the right diagonally from the upper-left corner of the window.&nbsp; Change the program
+	   so that seven green circles are drawn going down the screen.&nbsp; Show your program
+	   to your instructor when you get it working properly.
+	 </span>
+	   <br><br> </li>
+
+   <li> Copy this code and paste it into the editor window, replacing the last two lines
+        in your program:
+<pre>
+    } // end for
+    if (mousePressed) {
+        howManyCircles = 3;
+    } // end if
+} // end draw
+</pre>  
+       Run the program and then click the mouse button 5 times, observing what happens.&nbsp; 
+       <br><br> </li>
+
+<li> <span class="yellow">
+       Modify the program so that it initially draws 1 green circle, and every time the
+       user clicks the mouse button, <code>howManyCircles</code> is increased by one, so
+	   that clicking the mouse repeatedly causes more and more circles to appear on
+	   screen.&nbsp; Show your program
+	   to your instructor when you get it working properly.
+	 </span>
+	   <br><br> </li>
+
+  <li> For a short diversion, let's browse a nice website that provides matched palettes 
+       of color that artists have contributed.&nbsp; The site is 
+       <a href="https://web.archive.org/web/20121017134122/http://www.colorschemer.com:80/" target="_blank">
+	   http://www.colorschemer.com</a>
+	   &mdash; visit it now.&nbsp; Click on the "Scheme Gallery" top menu item, and scroll
+	   down the first page of color schemes that are displayed.&nbsp; At the bottom of
+	   the page, you see a navigation line that allows you to go to the next page of
+	   schemes or to select a specific page number.&nbsp; Browse through a couple of pages
+	   to page 3 and look at the "Brick &amp; Ivy" scheme in the middle of that page.
+	   <br/><br/>
+	   Let's say you wanted to use the greenish color in the
+	   Brick &amp; Ivy scheme (the second square from the left)
+	   as the background color for your Processing program; to see what the color number
+	   would be for this color, move your mouse so that it is hovering over that square in
+	   the scheme.&nbsp; What you should notice is that a little pop-up hint appears with 
+	   the strange information "#60715F" &mdash; what the heck is that?&nbsp; If you are
+	   familiar with setting colors in web pages, you may recognize this format of 
+	   color information.&nbsp; It turns out that the first two characters after the #
+       represent the red part of the color, the middle two characters are the green value,
+       and the last two characters are the blue part of the color.&nbsp; But the problem
+       is that the values are specified in hexadecimal notation, not normal decimal numbers.
+       Luckily, Processing can work with hexadecimal values if we use special notation
+       when using those values.&nbsp; If a numeric value in Processing starts with "0x", then
+	   that value is interpreted as being in hexadecimal notation.
+       <br/><br/>
+       Here's an example of how we can use these values &mdash; in the program you currently
+	   are running in your Processing editor window, locate the <code>background</code> function
+	   call at the top of the <code>draw</code> function, and change it to use the #60715F color
+	   like this:
+<pre>
+    background( 0x60, 0x71, 0x5F );
+</pre>	   
+       Pretty nice, huh?&nbsp; Now change the <code>stroke</code> and <code>fill</code>
+	   function calls in the <code>setup</code> function so that they both use the
+	   medium tan color in the Brick &amp; Ivy scheme (fourth one from the left).       
+	   <br/><br/> </li>
+	   
+  <li> Copy this code into the Processing editor window:
+<pre>
+size(400, 400);
+background(0xc8, 0xc6, 0x9f);
+stroke(0x82, 0x68, 0x3c);
+fill(0xa6, 0xac, 0x92);
+strokeWeight(3);
+
+int x, y;
+
+// draw first row of 6 columns starting at (40, 80);
+rect( 40,  80, 25, 25);
+rect( 80,  80, 25, 25);
+rect(120,  80, 25, 25);
+rect(160,  80, 25, 25);
+rect(200,  80, 25, 25);
+rect(240,  80, 25, 25);
+
+// draw second row of 6 columns starting at (40, 120);
+rect( 40, 120, 25, 25);
+rect( 80, 120, 25, 25);
+rect(120, 120, 25, 25);
+rect(160, 120, 25, 25);
+rect(200, 120, 25, 25);
+rect(240, 120, 25, 25);
+
+// draw third row of 6 columns starting at (40, 160);
+rect( 40, 160, 25, 25);
+rect( 80, 160, 25, 25);
+rect(120, 160, 25, 25);
+rect(160, 160, 25, 25);
+rect(200, 160, 25, 25);
+rect(240, 160, 25, 25);
+
+// draw fourth row of 6 columns starting at (40, 200);
+rect( 40, 200, 25, 25);
+rect( 80, 200, 25, 25);
+rect(120, 200, 25, 25);
+rect(160, 200, 25, 25);
+rect(200, 200, 25, 25);
+rect(240, 200, 25, 25);
+</pre>  
+       Run the program and observe the results.&nbsp; Boy, that code looks very repetitive,
+	   doesn't it?&nbsp; Take a close look at the code that draws the first row &mdash; what
+	   is the only thing that is changing?&nbsp; Note that the only thing that changes is the
+	   first number in parentheses, which is the horizontal position of the rectangle to 
+	   be drawn.&nbsp; If we would replace those changing numbers with a variable, we
+	   could try to draw 6 rectangles with this code:
+<pre>
+x = 40;
+for (int col = 1; col &lt;= 6; col++) {
+    rect( x, 80, 25, 25);
+} // end for	   
+</pre>
+       Copy this and paste it in your program to replace
+	   the first block of 6 <code>rect</code> statements.&nbsp; What happens
+       when you run it?&nbsp; Hey, how come there aren't 6 rectangles in the first row?&nbsp; The
+       problem is that we drew 6 rectangles, but they are all on top of one another.&nbsp; 
+       What we need to do is after drawing one rectangle and before the end of the loop, we
+	   need to add 40 to <code>x</code> so that the next time around in the loop, 
+	   the value of <code>x</code> is what
+	   we want for the next rectangle.&nbsp; Add such a statement now and run your program.&nbsp; 
+	   That's much better, isn't it?
+       <br><br> </li>
+	   
+<li> <span class="yellow">
+       Change the <code>for</code> loop so that it draws 8 squares, not 6.&nbsp; Then modify
+	   all of the other code blocks that draw the other rows so that they 
+	   use <code>for</code> loops.&nbsp; When you have finished this, copy and paste so that
+	   your program draws 5 rows of 8 columns of squares &mdash; you should only have 5 
+	   <code>rect</code> statements in your entire program to accomplish this.&nbsp; 
+	   Show your program
+	   to your instructor when you get it working properly.
+	 </span>
+	   <br><br> </li>
+
+   <li> OK, so far, so good.&nbsp; But now notice that the code for each row is exactly the same,
+        except for one thing -- the vertical position of the rectangles being drawn.&nbsp; 
+        To prevent this duplication, we can change the block of code that draws the first 
+        row so that the vertical position is a variable, and then surround that with a loop 
+		that is repeated once for each row we want to draw.&nbsp; Something like this:
+		<blockquote> <code>
+		    y = <font face="Comic Sans MS" color="#990099">the starting y value we want to use for row 1</font> ; <br/>
+			for (int row = 1; row &lt;= <font face="Comic Sans MS" color="#990099">the last row we want to draw</font>; row++) { <br/><br/>
+			&nbsp; &nbsp; &nbsp; &nbsp; <font face="Comic Sans MS" color="#990099">// all of the code to draw one row should appear here <br/>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // with the change that the rect statement should be <br/>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // changed to </font>rect( x, y, 25, 25 ); <br/><br/>
+			&nbsp; &nbsp; &nbsp; &nbsp; y = y + <font face="Comic Sans MS" color="#990099">the change in vertical position from one row to the next</font> ;<br/>
+		    } // end outer for
+		</code> </blockquote>
+		Make these changes, and then delete all of the code for the second through the fifth
+		rows that you had before.&nbsp; There should only be ONE <code>rect</code> statement
+		in the program now.
+		<br/><br/> </li>
+	   
+<li> <span class="yellow">
+       Change the program so that it draws 7 rows of 4 columns each.&nbsp; There must only 
+	   be one <code>rect</code> statement in your program.&nbsp; 
+	   Show your program
+	   to your instructor when it works.
+	 </span>
+	   <br><br> </li>
+
+   <li> Copy this code and paste it into the editor window:
+<pre>
+int x, y, numRowsToDraw, numColsToDraw;
+
+void setup() {
+  size(400, 400);
+  frameRate(8);
+  stroke(0x82, 0x68, 0x3c);
+  fill(0xa6, 0xac, 0x92);
+  strokeWeight(3);
+  numRowsToDraw = 1;
+  numColsToDraw = 1;
+} // end of setup
+
+void draw() {
+  background(0xc8, 0xc6, 0x9f);
+  y = 30;
+  for (int row = 1; row &lt;= numRowsToDraw; row++) {
+    x = 30;
+    for (int col = 1; col &lt;= numColsToDraw; col++) {
+      ellipse( x, y, 25, 25);
+      x += 30;
+    } // end for
+    y += 30;
+  } // end outer for	
+
+  if (mousePressed) {
+    if (mouseButton == LEFT) {
+      println("left button clicked");
+    }
+    if (mouseButton == RIGHT)  {
+      println("right button clicked");
+    }
+  }
+  
+} // end of draw
+</pre>  
+       Run the program and then click both mouse buttons a number of times, observing what happens.&nbsp; 
+       <br><br> </li>
+
+<li> <span class="yellow">
+       Add code to the program so that it works like this:&nbsp; if the user clicks the left mouse
+	   button, add one to <code>numRowsToDraw</code>, then test 
+	   <code>numRowsToDraw</code> to see if it is more than 10;
+	   if so, then set <code>numRowsToDraw</code> to one.&nbsp; Similarly, if the 
+	   right mouse button is clicked
+	   by the user, add one to <code>numColsToDraw</code>, and then if 
+	   <code>numColsToDraw</code> is more than 10, set <code>numColsToDraw</code> to one.&nbsp; 
+	   Show your program
+	   to your instructor when it works as described here.
+	 </span>
+	   <br><br> </li>
+
+   <li> Copy this code into the Processing editor window:
+<pre>
+float gapBetweenLines = 8;
+
+void setup() {
+    size(480, 120);
+    smooth();
+    strokeWeight(2);
+} // end setup
+
+void draw() {
+    background(204);
+    for (int i = 20; i &lt; 400; i += gapBetweenLines) {
+        line( i, 40, i+60, 80);
+    } // end for
+    gapBetweenLines = 8*(mouseX / 40.0) + 1;
+} // end draw
+</pre>  
+       Run the program and move the mouse around the window, observing what happens.&nbsp; 
+       <br><br> </li>
+
+
+</ol>
+</body>
+</html>

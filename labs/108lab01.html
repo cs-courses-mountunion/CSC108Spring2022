@@ -1,0 +1,349 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 1</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 1&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; January 19, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Drawing, Variables and a Little Math <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB01</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+  <li> Starting at the beginning of Chapter 3 of the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a>, read the text and try
+       the code from Examples 3-1 and 3-2 &mdash; you will actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.&nbsp; Then make changes 
+	   as suggested by the authors and see if you can get the system to do what is suggested.&nbsp; If you try to paste code samples that you copy from the textbook into the Processing editor window, unfortunately the editor doesn't put the statements on separate lines, but puts everything all on one line.&nbsp; So for these lab directions, the code samples from the book have been copied and edited so that the statements are on separate lines.&nbsp; Here are the code samples for Exercises 3-1 and 3-2:<br/><br/>
+	   <b>Exercise 3-1:</b><br/>
+<textarea rows="4" cols="50">
+size(800, 600);
+</textarea><br/><br/>
+	   <b>Exercise 3-2:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+point(240, 60);
+</textarea>
+	   
+	   <br/><br/>
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB01a</b></em>, <em><b>LAB01b</b></em>, etc. <br/><br/> </li>
+
+  <li> Pay particular attention to the drawings shown in the "Basic Shapes" section
+       of the text.&nbsp; These are
+       the simple drawing functions that you can use in Processing. <br/><br/> </li> 
+
+  <li> Work on Exercises 3-3, 3-4, 3-5 and 3-6 (be sure to read the text in the book between
+       the exercises, too). <br/><br/>
+	   <b>Exercise 3-3:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+line(20, 50, 420, 110);
+</textarea><br/><br/>
+	   <b>Exercise 3-4:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+quad(158, 55, 199, 14, 392, 66, 351, 107);
+triangle(347, 54, 392, 9, 392, 66);
+triangle(158, 55, 290, 91, 290, 112);
+</textarea><br/><br/>
+	   <b>Exercise 3-5:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+rect(180, 60, 220, 40);
+</textarea><br/><br/>
+	   <b>Exercise 3-6:</b><br/>
+<textarea rows="4" cols="50">
+size(480, 120);
+ellipse(278, -100, 400, 400);
+ellipse(120, 100, 110, 110);
+ellipse(412, 60, 18, 18);
+</textarea>
+	   <br/><br/> </li> 
+
+  <li> Skip ahead three sections to the "Color" section of the text and read 
+       the first part of the section on Color, 
+       working out Exercises 3-15, 3-16 and 3-17.&nbsp; There are several ways 
+       to set the drawing colors in Processing:&nbsp; if you use just one parameter, then
+	   the color will be white, black or a shade of gray.&nbsp; If you use three parameters,
+	   then the color will be an opaque blend of red, green and blue.<br/><br/>
+	   <b>Exercise 3-15:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+background(0);               // Black
+fill(204);                   // Light gray
+ellipse(132, 82, 200, 200);  // Light gray circle
+fill(153);                   // Medium gray
+ellipse(228, -16, 200, 200); // Medium gray circle
+fill(102);                   // Dark gray
+ellipse(268, 118, 200, 200); // Dark gray circle
+</textarea><br/><br/>
+	   <b>Exercise 3-16:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+fill(153);                    // Medium gray
+ellipse(132, 82, 200, 200);   // Gray circle
+noFill();                     // Turn off fill
+ellipse(228, -16, 200, 200);  // Outline circle
+noStroke();                   // Turn off stroke
+ellipse(268, 118, 200, 200);  // Doesn't draw!
+</textarea><br/><br/>
+	   <b>Exercise 3-17:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+noStroke();
+background(0, 26, 51);        // Dark blue color
+fill(255, 0, 0);              // Red color
+ellipse(132, 82, 200, 200);   // Red circle
+fill(0, 255, 0);              // Green color
+ellipse(228, -16, 200, 200);  // Green circle
+fill(0, 0, 255);              // Blue color
+ellipse(268, 118, 200, 200);  // Blue circle
+</textarea>
+	   <br/><br/> </li> 
+
+  <li> <span class="yellow">
+       Can you write a Processing program that draws a version of the 
+       <a href="http://flagspot.net/flags/cz.html" target="_blank"> flag of the Czech
+       Republic</a>?&nbsp; Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Go back to the "Basic Shapes" section and complete Exercise 3-7 and 3-8.&nbsp; 
+       Unless you are a math major, 
+       it is more natural to think of drawing arcs using angle measurements in degrees, so
+	   you'll almost always use the style shown in Exercise 3-8 when using 
+	   the <code>arc</code>
+	   function.
+       <br/><br/>
+	   <b>Exercise 3-7:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+arc(90, 60, 80, 80, 0, HALF_PI);
+arc(190, 60, 80, 80, 0, PI+HALF_PI);
+arc(290, 60, 80, 80, PI, TWO_PI+HALF_PI);
+arc(390, 60, 80, 80, QUARTER_PI, PI+QUARTER_PI);
+</textarea><br/><br/>
+	   <b>Exercise 3-8:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+arc(90, 60, 80, 80, 0, radians(90));
+arc(190, 60, 80, 80, 0, radians(270));
+arc(290, 60, 80, 80, radians(180), radians(450));
+arc(390, 60, 80, 80, radians(45), radians(225));
+</textarea>
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Write a Processing program that draws a simplified version of the letter S shown in
+	   the 
+       <a href="108lab01umucs.png" target="_blank"> Mount Union CS Department logo</a>.&nbsp; 
+	   In other words, 
+	   you are to draw a couple of arcs and a line to have the stylistic S show
+	   up in the output window.&nbsp; Show your 
+	   results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Move forward in Chapter 3 to the "Custom Shapes" section of the text, and 
+       complete Exercises 3-19 and 3-20.
+       <br/><br/>
+	   <b>Exercise 3-19:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+beginShape();
+fill(153, 176, 180);
+vertex(180, 82);
+vertex(207, 36);
+vertex(214, 63);
+vertex(407, 11);
+vertex(412, 30);
+vertex(219, 82);
+vertex(226, 109);
+endShape();
+</textarea><br/><br/>
+	   <b>Exercise 3-20:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+beginShape();
+fill(153, 176, 180);
+vertex(180, 82);
+vertex(207, 36);
+vertex(214, 63);
+vertex(407, 11);
+vertex(412, 30);
+vertex(219, 82);
+vertex(226, 109);
+endShape(CLOSE);
+</textarea>
+
+       <br> <br> </li>
+
+  <li> <span class="yellow">
+       Write a Processing program that draws the flag of 
+	   <a href="http://flagspot.net/flags/us-tx.html" target="_blank"> Texas</a> and the 
+	   simplified version of
+	   the flag of
+	   <a href="108lab01Ohio.png" target="_blank"> Ohio shown here</a>.
+	   &nbsp;Draw the two flags side by side in the
+	   output window.&nbsp; To draw the stars and other odd shapes that you'll need to do this,
+	   make a drawing on paper and figure out the (x, y) coordinates of all the points of
+	   the shapes you'll be drawing.&nbsp; Click <a href="108lab01txstar.html"> THIS LINK</a>
+	   to see a program fragment that draws a star.&nbsp; Show your 
+	   results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Copy the code shown here into the Processing editor window and run it to see what
+       happens:	   
+<pre>
+int x, y, sum, diff, avg;
+x = 22;
+y = 15;
+print("x = ");
+println(x);
+print("y = ");
+println(y);
+</pre>	   
+       Then add the following lines to the end of the program:
+<pre>
+sum = x + y;
+diff = x - y;
+avg = x + y / 2;
+</pre>	   	   
+       </li>
+
+  <li> <span class="yellow">
+       Add code to the end of your program that prints the sum, difference and average 
+	   values on separate lines in the Console area at the bottom of the Processing window.&nbsp; 
+	   Use the style shown above to print a label, an equals sign and then the value of 
+	   the variable on each line.&nbsp; Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Hey, wait a minute &mdash; that's not the right average, is it?&nbsp; 
+       The average of two numbers can't be
+       bigger than the larger number!!&nbsp; The problem has to do with the precedence of
+       the operators used in the expression:&nbsp; we need to do the addition first and then
+       the division.&nbsp; Fix the code so that it calculates the average correctly.
+	   <br/><br/> </li>
+
+  <li> <span class="yellow">
+       Add code to the end of your program that prints half of the difference between 
+	   <code>x</code> and <code>y</code> on a separate line in the Console, using the 
+	   same style as used for the other lines being printed.&nbsp; Show your results 
+	   to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> You may have noticed another anomaly in this program &mdash; the average of an even
+       number and an odd number should be <b><code>something.5</code></b>, but there's 
+	   no <code>.5</code> being printed.&nbsp;
+	   This is because we used <code>int</code> as the data type for our variables.&nbsp;
+	   Change the data type of all the variables to <code>float</code>, run the 
+	   program again, and notice that this fixes the problem.
+       <br><br> </li>
+
+  <li> In the text, move forward to Chapter 4, read the text and complete Exercises 4-1, 4-2 and 
+       4-3.
+       <br/><br/>
+	   <b>Exercise 4-1:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+int y = 60;
+int d = 80;
+ellipse(75, y, d, d);    // Left
+ellipse(175, y, d, d);   // Middle
+ellipse(275, y, d, d);   // Right
+</textarea><br/><br/>
+	   <b>Exercise 4-2:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+int y = 100;
+int d = 130;
+ellipse(75, y, d, d);    // Left
+ellipse(175, y, d, d);   // Middle
+ellipse(275, y, d, d);   // Right
+</textarea><br/><br/>
+	   <b>Exercise 4-3:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+line(0, 0, width, height); // Line from (0,0) to (480, 120)
+line(width, 0, 0, height); // Line from (480, 0) to (0, 120)
+ellipse(width/2, height/2, 60, 60);
+</textarea>
+       <br> <br> </li>
+
+  <li> Copy the code shown here into the Processing editor window and run it to see what
+       happens:	   
+<pre>
+float x, y;
+
+void setup() {
+    size(600, 400);
+    smooth();
+    x = 300;
+    y = 200;
+}
+
+void draw() {
+    triangle(300, 200, 550, 150, 550, 250);
+}
+</pre>
+  </li>
+
+  <li> Replace the line inside the <code>draw</code> function with this one, then run the
+       program and notice that the drawing is the same:	   
+<pre>
+    triangle(x, y, x + 250, y - 50, x + 250, y + 50);
+</pre>
+        Why use the variables?&nbsp; Because if we want to move the shape so that it is 
+		drawn in a new location on the screen, you have to use variables.&nbsp; This will be
+		illustrated in the rest of this lab exercise. <br/><br/>
+  </li>
+
+  <li> Change the first two parameters in the <code>triangle</code> function call to be
+       <code>mouseX</code> and <code>mouseY</code>, respectively.&nbsp; Then run the program
+	   and move the mouse around the window to see what difference that change makes.&nbsp;
+	   Then add this line as the first line in your <code>draw</code> function:
+<pre>
+    background(204);
+</pre>
+        Run the program and move the mouse around again.&nbsp; The <code>background</code>
+        function call erases the window in a specific color before drawing the rest of the 
+		stuff in the <code>draw</code> function &nbsp; Pretty cool, huh?
+       <br> <br> </li>
+
+  <li> Replace the other two occurrences of  
+	   <code>x</code> in the <code>triangle</code> function call with 
+	   <code>mouseX</code>.&nbsp; Then replace the two <code>y</code>'s with <code>mouseY</code>
+	   and run the program.
+       <br> <br> </li>
+
+  <li> <span class="yellow">
+       Change the parameters in the <code>triangle</code> function call so that the triangle
+	   points to the right, not to the left.&nbsp;The point of the triangle should still
+	   be at the mouse position.&nbsp;   
+	   Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+</body>
+</html>

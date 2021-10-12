@@ -1,0 +1,393 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 6</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 6&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; February 28, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Programmer-Defined Functions, Parameters and Arguments <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB06</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+  <li> Start reading Chapter 9 in the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a>; read the text and try
+       the code from Example 9-1 &mdash; actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.&nbsp;DON'T JUST RUN THE CODE &mdash;
+	   try to understand how it works.<br/><br/>
+	   <b>Exercise 9-1:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+  println("Ready to roll!");
+  rollDice(20);
+  rollDice(20);
+  rollDice(6);
+  println("Finished.");
+}
+
+void rollDice(int numSides) {
+  int d = 1 + int(random(numSides));
+  println("Rolling... " + d);
+}
+</textarea>
+       <br/><br/>
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB06a</b></em>, <em><b>LAB06b</b></em>, etc. <br/><br/> </li>
+
+  <li> The output of the program for Example 9-1 doesn't make it clear how many sides the die that is being
+       "rolled" has &mdash; it just prints the result.&nbsp; So if the result is 4, we don't know if a 4-sided
+	   die was rolled, a 6-sided die, or a 100-sided die was rolled.&nbsp; Let's change the text that is printed
+	   when the results of the die roll are displayed to include this information.&nbsp; Change the contents of the
+	   <code>println</code> statement in the <b>rollDice</b> function to be:
+<pre>
+    println("Rolled a " + d + " on a " + numSides + "-sided die.");
+</pre>
+       Run the program and notice the difference in the output produced by the code.
+	   <br><br> </li>
+
+  <li> <span class="yellow">
+       Instead of having separate calls to the <code>rollDice</code> function with different constant numbers
+	   as the argument value, let's use a <code>for</code> loop to call the function repeatedly with different
+	   argument values.&nbsp; Delete the two lines that say "<code>rollDice(20);</code>", and replace them with
+	   a for loop that makes the loop control variable start at 4, keep going as long as the loop control
+	   variable is less than or equal to 20, and changes the loop control variable by adding 2 every time we
+	   go through the loop.&nbsp; Then change the "6" in the <code>rollDice</code> function call that remains in
+	   your program to be the loop control variable.&nbsp; Don't forget to put a closing curly brace on the line
+	   after the <code>rollDice</code> function call line.&nbsp; When you run this program, you should see 
+	   results from rolling a 4-sided die, a 6-sided die, and so on up to a 20-sided die.&nbsp;
+	   Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> To more easily see the results of our die rolls, let's draw a bar graph that shows the results of the 
+       rolls and the number of sides on the die for each roll.&nbsp; To do this, we'll define a new function in 
+       our program called <code>drawBar</code>.&nbsp; This function will need two parameters, one to 
+	   specify the number of sides on the die, and another to specify the result of the die roll.&nbsp; Copy
+	   the following code and paste it into your program at the very bottom of the file:
+	   <br/>
+<pre>
+  void drawBar(int numSides, int d) {
+     stroke(255);
+     fill(255);
+     rect(50+(numSides-4)*40, 600-numSides*25, 25, numSides*25);  
+     text(""+numSides, 80+(numSides-4)*40, 600-numSides*25);
+     fill(numSides*4+175, 0, 0);
+     rect(50+(numSides-4)*40, 600-d*25, 25, d*25);
+     fill(255, 255, 0);
+     text(""+d, 80+(numSides-4)*40, 600-d*25); 
+  }
+</pre>
+       Next, paste the following two lines into your program to be the first two lines of the <code>setup</code>
+	   function:
+<pre>
+  size(800, 600);
+  background(0);
+</pre>	   
+       Then run the program to ensure that it prints the same results in the Console as it did before you made
+	   these changes.&nbsp; Where are the 
+	   bars on the screen?&nbsp; Well, having a function to draw a bar doesn't mean that a bar will be drawn --
+	   we have to call the function to bring it into action.
+	   <br><br> </li>
+
+  <li> <span class="yellow">
+       Inside the <code>rollDice</code> function, after printing the line to the Console, call the
+	   <code>drawBar</code> method.&nbsp; For this to work properly, you must specify two things inside
+	   the parentheses for the method call; the first value is the number of sides on the die that was rolled,
+	   and the second value is the result of the die roll.&nbsp; If you do this correctly, you will see bars of
+	   various heights, with the number of sides on the die shown in white, and the result of the die roll
+	   displayed in red and yellow.&nbsp; When you get this working correctly, show your results to your
+	   instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Move ahead in the textbook to the section entitled "Make a Function".&nbsp; Copy the code from
+       Example 9-3 into a blank Processing editor window
+	   and run it to see the results shown in the textbook.
+	   <br/><br/>
+	   <b>Exercise 9-3:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  background(176, 204, 226);
+  translate(110, 110);
+  stroke(138, 138, 125);
+  strokeWeight(70);
+  line(0, -35, 0, -65);    // Body
+  noStroke();
+  fill(255);
+  ellipse(-17.5, -65, 35, 35);  // Left eye dome
+  ellipse(17.5, -65, 35, 35);   // Right eye dome
+  arc(0, -65, 70, 70, 0, PI);   // Chin
+  fill(51, 51, 30);
+  ellipse(-14, -65, 8, 8);  // Left eye
+  ellipse(14, -65, 8, 8);   // Right eye
+  quad(0, -58, 4, -51, 0, -44, -4, -51);  // Beak
+}
+</textarea>
+       <br/><br/>
+	   The code to draw the owl is rather involved, and is 13 lines long.&nbsp; If we wanted to draw 2
+	   owls at different screen locations, we would have to make a duplicate copy of the code for the 
+	   first owl and then change all the numbers to draw the second owl in a differnt location.&nbsp;
+	   To have a group of 5 or 6 or 10 owls would be very tedious and repetitive using this approach of
+	   copying code and making changes to each copy.&nbsp;
+	   But if we had a function that could draw an owl in an (x,y) position in the window, then if we wanteed to
+	   draw 5 owls, we would just call the owl-drawing method 5 times with different values as the arguments
+	   when calling the function.&nbsp; This is the way real programs are written, using functions to define
+	   sequences of operations in general that can be called upon many times in a program. <br/><br/>
+	   
+  <li> Run Examples 9-5, 9-6 and 9-7 in the textbook, reading the text before running the code so that
+       you understand what the examples are doing.
+       <br/><br/>
+	   <b>Exercise 9-5:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  background(176, 204, 226);
+  owl(110, 110);
+  owl(180, 110);
+}
+
+void owl(int x, int y) {
+  pushMatrix();
+  translate(x, y);
+  stroke(138, 138, 125);
+  strokeWeight(70);
+  line(0, -35, 0, -65);  // Body
+  noStroke();
+  fill(255);
+  ellipse(-17.5, -65, 35, 35); // Left eye dome
+  ellipse(17.5, -65, 35, 35);  // Right eye dome
+  arc(0, -65, 70, 70, 0, PI);  // Chin
+  fill(51, 51, 30);
+  ellipse(-14, -65, 8, 8); // Left eye
+  ellipse(14, -65, 8, 8);  // Right eye
+  quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
+  popMatrix();
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 9-6:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  background(176, 204, 226);
+  for (int x = 35; x &lt; width + 70; x += 70) {
+    owl(x, 110);
+  }
+}
+
+void owl(int x, int y) {
+  pushMatrix();
+  translate(x, y);
+  stroke(138, 138, 125);
+  strokeWeight(70);
+  line(0, -35, 0, -65);  // Body
+  noStroke();
+  fill(255);
+  ellipse(-17.5, -65, 35, 35); // Left eye dome
+  ellipse(17.5, -65, 35, 35);  // Right eye dome
+  arc(0, -65, 70, 70, 0, PI);  // Chin
+  fill(51, 51, 30);
+  ellipse(-14, -65, 8, 8); // Left eye
+  ellipse(14, -65, 8, 8);  // Right eye
+  quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
+  popMatrix();
+}
+</textarea>
+       <br/><br/>
+	   <b>Exercise 9-7:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  background(176, 204, 226);
+  randomSeed(0);
+  for (int i = 35; i &lt; width + 40; i += 40) {
+    int gray = int(random(0, 102));
+    float scalar = random(0.25, 1.0);
+    owl(i, 110, gray, scalar);
+  }
+}
+
+void owl(int x, int y, int g, float s) {
+  pushMatrix();
+  translate(x, y);
+  scale(s);  // Set the size
+  stroke(138-g, 138-g, 125-g); // Set the color value
+  strokeWeight(70);
+  line(0, -35, 0, -65); // Body
+  noStroke();
+  fill(255);
+  ellipse(-17.5, -65, 35, 35); // Left eye dome
+  ellipse(17.5, -65, 35, 35);  // Right eye dome
+  arc(0, -65, 70, 70, 0, PI);  // Chin
+  fill(51, 51, 30);
+  ellipse(-14, -65, 8, 8);  // Left eye
+  ellipse(14, -65, 8, 8);   // Right eye
+  quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
+  popMatrix();
+}
+</textarea>
+<br/><br/> </li>
+
+  <li> Let's change this latest program so the owls are drawn in random colors.&nbsp; To do this, make 
+       the following changes to the program for Example 9-7:&nbsp; in the <code>draw</code> function,
+       change "gray" to "red", and change the numbers in the call to "random" to be 
+	   "<code>random(36, 188)</code>".&nbsp; Then copy this line that chooses a red value randomly, and paste
+	   it into the <code>draw</code> method twice more; rename the variables in the copies so that one of
+	   them is named "green" and the other is named "blue".&nbsp; Then in the call to the <code>owl</code> 
+	   function at the bottom of the loop, change "gray"
+	   to "red, green, blue" &mdash; so now there are six argument values inside the parentheses.<br/><br/>
+	   
+	   The program won't work at this point, because we have changed the number of values we are sending
+	   to the <b>owl</b> function, so we'll also need to change the definition of that function so it
+	   can accept six parameters and do the appropriate things.&nbsp; Replace the heading line of
+	   the <b>owl</b> function with this new one:
+<pre>
+    void owl(int x, int y, int r, int g, int b, float s) {
+</pre>
+	   Then find the <code>stroke</code> statement in the function, and change the values in the parentheses
+	   so that the color used is (r, g, b).
+	   &nbsp; When you run the program, you should see a bunch of multi-colored owls.
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Run the program
+	   three more times &mdash; hey, why are the owls always the same color?&nbsp; This has to do with the
+	   "randomSeed" statement in the <code>draw</code> function.&nbsp; What this does is force the random
+	   number generator to use the same sequence of random values every time the program is run.&nbsp; That's
+	   not so fun -- what if we delete that line?&nbsp; Whoa!&nbsp; The owls are being drawn over and over!&nbsp;
+	   Why is that?&nbsp; Remember that the <code>draw</code> function in Processing is run multiple times per second
+	   based on the frame rate value.&nbsp; We can slow this down a bit by adding the statement 
+	   "<code>frameRate(1);</code>" to the <code>setup</code> function in the program.&nbsp; That's better!&nbsp; 
+	   Show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Let's apply the function idea to an earlier example from the textbook.&nbsp; Copy this code into
+       a blank Processing editor window:
+<pre>
+
+void setup() {
+
+    drawArrow();
+	
+} // end of setup()
+
+void drawArrow() {
+
+} // end of drawArrow()
+
+</pre>	   
+	   Then consider the code from Example 3-20 from the "Custom Shapes" section of Chapter 3 in the textbook, shown here for your convenience.<br/><br/>
+	   <b>Exercise 3-20:</b><br/>
+<textarea rows="6" cols="50">
+size(480, 120);
+beginShape();
+fill(153, 176, 180);
+vertex(180, 82);
+vertex(207, 36);
+vertex(214, 63);
+vertex(407, 11);
+vertex(412, 30);
+vertex(219, 82);
+vertex(226, 109);
+endShape(CLOSE);
+</textarea>
+       <br/><br/>
+	   Paste the first line of this example into the <code>setup</code> function of your program, and paste all
+	   the other lines of the example into the <code>drawArrow</code> function.&nbsp; Be sure to put the code
+	   inside the curly braces of the methods.&nbsp; Next, change the numbers used in the <code>size</code>
+	   so that the window is 800 pixels wide and 600 pixels high.&nbsp; Run the program &mdash; 
+	   You should see an arrow appear on the screen.
+       <br><br> </li>
+
+  <li> To convert our <code>drawArrow</code> function into one that is capable of drawing an arrow at
+       a screen location that is specified when the method is called, we need to add parameters to the function
+	   heading, and change the statements that draw the arrow.&nbsp; To do this, first change the heading of
+	   the <code>drawArrow</code> function to this:
+<pre>
+void drawArrow(int x, int y) {
+</pre>	   
+       Then in the <code>setup</code> function, add two argument values inside the parentheses of the
+	   call to <code>drawArrow</code> -- the first value should be 180, and the second value should be 82.&nbsp;
+	   Next, find the first <code>vertex</code> statement in the <code>drawArrow</code> function, and change what's
+	   in the parentheses to <code>(x, y)</code>.&nbsp;
+	   Run the program to ensure that it still works without errors.<br/><br/>
+	   
+	   Notice the second <code>vertex</code> statement in the <code>drawArrow</code> function; the point that is
+	   defined is (207, 36), and since x == 180 and y == 82, we could replace the specific numbers with the
+	   expressions (x + 27, y - 44).&nbsp; The reason for doing this is that if we call the function with different
+	   values for x and y, the arrow can be drawn in a different location because the calculations are performed 
+	   relative to the (x, y) point.<br/><br/>
+	   
+	   Change all of the <code>vertex</code> statements in the <code>drawArrow</code> so that they use calculations
+	   involving x and y instead of just numbers.&nbsp; The values that are added to or subtracted from x and y
+	   should be calculated from the original values of x == 180 and y == 82.&nbsp; Ask your instructor for help
+	   if you need it to determine the values to use in the expressions.&nbsp; Run the program, and if you
+	   did this correctly, the arrow will be drawn with the same shape and dimensions as it was drawn from
+	   the original code.
+       <br><br> </li>
+
+  <li> In the <code>setup</code> function of the program, add three more calls to the <code>drawArrow</code>
+	   function that use different argument values that will cause the arrows to be drawn in different
+	   screen locations.&nbsp; Run the program to verify that there are 4 different arrows displayed in the
+	   output window.
+	   </span>
+       <br><br> </li>
+
+  <li> <span class="yellow">
+       Add 3 more parameters to the heading of the <code>drawArrow</code> function that will represent the
+	   red, green and blue color values of the color that should be used to fill the body of the arrow.&nbsp;
+	   The new heading of the method should be this:
+<pre>
+void drawArrow(int x, int y, int r, int g, int b) {
+</pre>	   
+	   Change the <code>fill</code> statement to use (r, g, b) instead of the actual numbers in the code
+	   from the textbook example.&nbsp; Then change the 4 calls to the <code>drawArrow</code> function
+       in the <code>setup</code> function so that four different colors are used for your arrows.&nbsp;
+	   Here are some color triples you can use to do this:
+<pre>
+    Red:     255,   0,   0
+    Yellow:  255, 255,   0
+    Green:     0, 255,   0
+    Purple:  255,   0, 255
+    Blue:      0,   0, 255
+    Cyan:      0, 255, 255
+</pre>
+	   Now when you run the program, all four arrows should appear in different colors.&nbsp; Show your 
+	   results to your instructor.
+	   </span>
+       <br><br> </li>
+
+</ol>
+</body>
+</html>

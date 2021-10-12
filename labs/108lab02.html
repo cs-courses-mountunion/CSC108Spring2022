@@ -1,0 +1,365 @@
+<html>
+<head>
+<title>CSC 108 Lab Exercise # 2</title>
+<style type="text/css">
+.yellow { background-color: #ffff00; }
+</style>
+</head>
+
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Lab Exercise # 2&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
+            Due:&nbsp; January 28, 2022 (at end of class) </h2></center></font>
+
+Topics:&nbsp; Decision-making with <code>if</code> statements, mouse input, keyboard input <br/><br/>
+In these lab exercises, instructions with a yellow background indicate a task that should be
+demonstrated to your instructor when completed, in order to earn points for the lab.
+<br/><br/>
+
+<hr/><br/>
+
+<ol>
+  <li> Create a new Processing program (called a sketch) and save it right away in your
+       <em><b>CSC108</b></em> folder using the name <em><b>LAB02</b></em> (being sure not to
+	   use any spaces in the file name).
+       <br/><br/> </li>
+
+  <li> Starting at the beginning of Chapter 5 of the 
+       <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	   textbook</a>, read the text and try
+       the code from Examples 5-1, 5-2 and 5-3 &mdash; actually copy the code from the book and
+	   paste it into the Processing editor window to run the code.<br/><br/>
+	   <b>Exercise 5-1:</b><br/>
+<textarea rows="4" cols="50">
+void draw() {
+    // Displays the frame count to the Console
+    println("I'm Drawing");
+    println(frameCount);
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-2:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    println("I'm starting");
+}
+
+void draw() {
+    println("I'm running");
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-3:</b><br/>
+<textarea rows="6" cols="50">
+int x = 280;
+int y = -100;
+int diameter = 380;
+
+void setup() {
+    size(480, 120);
+    fill(102);
+}
+
+void draw() {
+    background(204);
+    ellipse(x, y, diameter, diameter);
+}
+</textarea>
+	   
+	   <br/><br/>
+	   You don't need to save your work between Exercises unless you want to -- in that case,
+	   use the "New" button from the Processing Toolbar, and use names such as
+	   <em><b>LAB02a</b></em>, <em><b>LAB02b</b></em>, etc. <br/><br/> </li>
+
+  <li> Move ahead to the section of the text entitled "Click", and work on Examples
+       5-10, 5-11 and 5-12 (be sure to read the text in the book between
+       the examples, too). <br/><br/>
+	   <b>Exercise 5-10:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(240, 120);
+    strokeWeight(30);
+}
+
+void draw() {
+    background(204);
+    stroke(102);
+    line(40, 0, 70, height);
+    if (mousePressed == true) {
+        stroke(0);
+    }
+    line(0, 70, width, 50);
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-11:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(240, 120);
+    strokeWeight(30);
+}
+
+void draw() {
+    background(204);
+    stroke(102);
+    line(40, 0, 70, height);
+    if (mousePressed) {
+        stroke(0);
+    } else {
+        stroke(255);
+    }
+    line(0, 70, width, 50);
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-12:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(120, 120);
+    strokeWeight(30);
+}
+
+void draw() {
+    background(204);
+    stroke(102);
+    line(40, 0, 70, height);
+    if (mousePressed) {
+        if (mouseButton == LEFT) {
+            stroke(255);
+        } else {
+            stroke(0);
+        }
+        line(0, 70, width, 50);
+    }
+}
+</textarea>
+	   
+	   <br/><br/> </li> 
+
+  <li> <span class="yellow">
+       Write a Processing program that works as follows:&nbsp; in the <code>setup</code> function,
+	   set the size of the drawing window to 400 by 400.&nbsp; In the <code>draw</code> function,
+	   set the fill color to a shade of RED if the mouse is being pressed; otherwise, set 
+	   the fill color to
+	   a shade of GREEN.&nbsp; Then as the last statement in the
+	   <code>draw</code> function, draw a triangle whose three points are these:&nbsp; the 
+	   bottom-left point of the triangle is the bottom-left corner
+	   of the window, the bottom-right point of the triangle is the bottom-right corner of the 
+	   window, and the top point of the triangle is the mouse position.&nbsp; When you have this
+	   working, show your results to your instructor.
+	   </span>
+	   <br><br> </li>
+
+  <li> Move forward in the text to the "Location" section and complete Example 5-13.&nbsp; Run the program and move the mouse
+       around the window to see what happens with the arrow and the line.
+       <br/><br/>
+	   <b>Exercise 5-13:</b><br/>
+<textarea rows="6" cols="50">
+float x;
+int offset = 10;
+
+void setup() {
+    size(240, 120);
+    x = width/2;
+}
+
+void draw() {
+    background(204);
+    if (mouseX &gt; x) {
+        x += 0.5;
+        offset = -10;
+    }
+    if (mouseX &lt; x) {
+        x -= 0.5;
+        offset = 10;
+    }
+    // Draw arrow left or right depending on "offset" value
+    line(x, 0, x, height);
+    line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+    line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+    line(mouseX, mouseY, mouseX + offset*3, mouseY);
+}
+</textarea>
+    <br/><br/> </li>
+
+<li> <span class="yellow">
+       Write a Processing program that draws a circle in the center of the drawing window that
+	   is colored based on where the mouse pointer is located.&nbsp; If the mouse is in the upper-left
+	   quadrant of the window, the circle should be a shade of purple; if the mouse is in the upper-right
+	   quadrant, the circle should be a shade of orange; if the mouse is in the lower-left quadrant,
+	   the circle should be some shade of blue; and if the mouse is in the lower-right quadrant, color
+	   the circle a shade of light green or aqua. <br/><br/>
+	   Your <code>draw</code> function should have a big <code>if</code> statement that chooses the fill color,
+	   and then after the <code>if</code> statement, draw the circle.&nbsp; Show your program
+	   to your instructor when you get it working.
+	 </span>
+	   <br><br> </li>
+
+<li> <span class="yellow">
+       Modify the program you just wrote so that the circle is drawn as a black circle if
+	   a mouse button is being pressed.&nbsp; If a mouse button is not being pressed, then 
+	   the colors should be the same as in the previous program.&nbsp; To do this, DON'T CHANGE
+	   the <code>if</code> statement you wrote in the previous step; you should add an
+	   additional, SEPARATE
+	   if statement immediately before you draw the circle that does the testing of the mouse
+	   buttons and sets the fill color to black if appropriate.&nbsp; Don't forget to include
+	   the proper curly braces for your new <code>if</code> statement.&nbsp; Show your program
+	   to your instructor when you get it working.
+	 </span>
+	   <br><br> </li>
+
+  <li> Read the paragraph that precedes Example 5-14 in the text, then  
+       complete Example 5-14.
+       <br/><br/>
+	   <b>Exercise 5-14:</b><br/>
+<textarea rows="6" cols="50">
+int x = 120;
+int y = 60;
+int radius = 12;
+
+void setup() {
+    size(240, 120);
+    ellipseMode(RADIUS);
+}
+
+void draw() {
+    background(204);
+    float d = dist(mouseX, mouseY, x, y);
+    if (d &lt; radius) {
+        radius++;
+        fill(0);
+    } else {
+        fill(255);
+    }
+    ellipse(x, y, radius, radius);
+}
+</textarea>
+    <br/><br/> </li>
+
+<li> <span class="yellow">
+       Modify the code from Example 5-14 so that the program works as in the given example
+	   if the mouse is located in the circle, but if the mouse is outside the circle, the
+	   fill color is set to white and then if the radius of the circle is more than 10, the
+	   radius is decreased by one.&nbsp; Show your 
+	   results to your instructor when you get this working.
+	 </span>
+	   <br><br> </li>
+
+  <li> Read the next section of the text entitled "Type", then
+       work on Examples
+       5-16, 5-17 and 5-18 (be sure to read the text in the book between
+       the examples, too). <br/><br/>
+	   <b>Exercise 5-16:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(240, 120);
+}
+
+void draw() {
+    background(204);
+    line(20, 20, 220, 100);
+    if (keyPressed) {
+        line(220, 20, 20, 100);
+    }
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-17:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(120, 120);
+    textSize(64);
+    textAlign(CENTER);
+}
+
+void draw() {
+    background(0);
+    text(key, 60, 80);
+}
+</textarea><br/><br/>
+	   <b>Exercise 5-18:</b><br/>
+<textarea rows="6" cols="50">
+void setup() {
+    size(120, 120);
+}
+
+void draw() {
+    background(204);
+    if (keyPressed) {
+        if ((key == 'h') || (key == 'H')) {
+            line(30, 60, 90, 60);
+        }
+        if ((key == 'n') || (key == 'N')) {
+            line(30, 20, 90, 100);
+        }
+    }
+    line(30, 20, 30, 100);
+    line(90, 20, 90, 100);
+}
+</textarea>
+	   
+	   <br/><br/> </li> 
+
+  <li> Copy the code shown here into the Processing editor window and run it to see what
+       happens:	   
+<pre>
+int x = 0;
+
+void setup() {
+  frameRate(10);
+} // end setup
+
+void draw() {
+  if (keyPressed) {
+    if (key == '+') {
+      x++;
+    }
+    else if (key == '-') {
+      x--;
+    }
+    print("x now = ");
+    println(x);
+  } // end if (keyPressed)
+  
+} // end draw
+</pre>	   
+       A little explanation here:&nbsp; the <code>frameRate</code> function changes how frequently
+	   the <code>draw</code> method is executed by the Processing system &ndash; the value 10 means
+	   that the output window will be redrawn 10 times each second (without using <code>frameRate</code>,
+	   the redraw rate is 60 times per second).&nbsp; 
+       <br/><br/> </li>
+
+<li> <span class="yellow">
+       Add an <code>else if </code> statement to this program so that if the '2' key is pressed
+	   on the keyboard, the value of x is doubled.&nbsp; Then add another <code> else if </code>
+	   statement that will halve the value of x if the '/' key is pressed.&nbsp; 
+	   Show your results to your instructor.
+	 </span>
+	   <br><br> </li>
+
+  <li> Copy the code shown here into the Processing editor window:	   
+<pre>
+void setup() {
+  frameRate(10);
+} // end setup
+
+void draw() {
+  if (keyPressed) {
+
+
+  } // end if (keyPressed)
+  
+} // end draw
+</pre>
+  </li>
+
+  <li> <span class="yellow">
+       Add <code>if</code> statements to this program so that if the user presses the A, B or C
+       keys, a word will be printed on a separate line in the Console that starts with the letter
+	   that was pressed.&nbsp; The word should be printed if either the lower-case or the upper-case
+	   version of the letter is typed.&nbsp; Refer to Example 5.18 in the text
+	   to see how to test for the two different versions of each letter (upper- and lower-case)
+	   in an <code>if</code> statement.&nbsp; Show your results to your instructor when this
+	   is working.
+	   </span> <br/><br/>
+  </li>
+
+
+</body>
+</html>
