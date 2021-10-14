@@ -1,1 +1,154 @@
+<html>
+<head>
+<title>CSC 108 Program # 3 </title>
+</head>
 
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            3&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 2/16/22
+        </h2>
+		<h3> Due at or before the <em>END</em> of class. </h3>
+</center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Modify Example 7-9 from the course textbook so that two images move randomly around the
+	output window.&nbsp; The program should respond to mouse clicks and key presses by
+	repositioning the images to certain screen locations.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work in a manner similar to <a href="prog3demo.zip" target="_blank"> 
+	this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using 
+	File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from 
+	the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the 
+	demo and see how your program should work. <br/><br/>
+	
+    Run the demo program, then press any key on the keyboard, then click the left 
+	mouse button, then click the right mouse button.&nbsp; Notice how the images are repositioned when a key
+	is typed or a mouse button is clicked.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then paste the 
+	following code into the editor window.&nbsp; This code is a modified version of the 
+	code from Example 7-9 from the textbook.
+
+<pre>
+float speed = 5.5;
+float x;
+float y;
+
+void setup() {
+  size(800, 600); 
+  smooth();
+  x = width-100;
+  y = 0;
+}
+
+void draw() {
+  background(0);  
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+  fill(255, 0, 0);
+  rect(x, y, 100, 100);
+}
+</pre>
+
+    When you run this program, you will see a red square moving randomly around the screen,
+	starting from the upper-right corner of the output window.
+</blockquote>
+
+<strong>Your Task, Step 1:&nbsp; Add a second square</strong>
+<blockquote>
+    First of all, you should change the program so that there are two squares moving on the
+	screen, a red one and a blue one, with the blue one starting at the lower-left corner
+	of the output window.&nbsp; To do this, you will need to declare two more
+	variables at the top of the program to store the x and y positions of the second square
+	(maybe you could call these variables <code>x2</code> and <code>y2</code>, or you can
+	use other names you would like).&nbsp; These two variables should be set to their proper
+	starting values in your <code>setup</code> function.&nbsp; You can copy all of the code
+	in the <code>draw</code> function except the "background(0);" statement and then paste 
+	a copy of that code at the end of <code>draw</code> &mdash; modify the copied code so
+	that it uses the two new variables you added, and so that the second square drawn is
+	blue instead of red.
+</blockquote>
+
+<strong>Your Task, Step 2:&nbsp; Replace the squares with images</strong>
+<blockquote>
+    Find two images you like and draw them instead of the rectangles in your <code>draw</code>
+	function.&nbsp; Visit <a href="http://www.openclipart.org" target="_blank">
+	http://www.openclipart.org</a>
+	and search for two images that you like.&nbsp; When you find an image that you would like
+	to use, click on it, and then click on the "PNG" button on the web page.&nbsp; This will 
+	cause a large version of the image to appear in your browser window &mdash; right-click 
+	the mouse on the image and then choose "Save Image As..." from the pop-up menu.&nbsp; 
+	Save the image in the folder for your Processing program, and you probably want to give
+	the file a simple name, since many of the names of the files on openclipart.org are 
+	long and somewhat weird.&nbsp; For the example program, the names "penguin.png" and 
+	"piano.png" were used.
+	<br/><br/>
+	When you have the two images saved, use the "Add Files" option of the "Sketch" menu
+	to add them to your program, and then replace each of the <code>fill</code> and the <code>rect</code>
+	statements in your <code>draw</code> function with an <code>image</code> statement that
+	draws each of your images in a 100 &times; 100 area.
+</blockquote>
+
+<strong>Your Task, Step 3:&nbsp; Add the ability to respond to user input</strong>
+<blockquote>
+    As the last steps in your <code>draw</code> function, add the following processing
+	logic: <br/><br/>
+	<em>if the user presses any key on the keyboard, </em>
+	<blockquote>
+	    set the x- and y-position of both images to the middle of the screen
+	</blockquote>
+	<em>if the user clicks the LEFT mouse button, </em>
+	<blockquote>
+	    set the x- and y-positions of the first image so that the image is displayed at the
+		top middle of the window, and set the x- and y-positions of the second image 
+		so that the image is displayed at the bottom middle of the window
+	</blockquote>
+	<em>if the user clicks the RIGHT mouse button, </em>
+	<blockquote>
+	    set the x- and y-positions of the first image so that the image is displayed at the
+		left middle of the window, and set the x- and y-positions of the second image 
+		so that the image is displayed at the right middle of the window
+	</blockquote>
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Place a comment header at the top of your program similar to this example, with information
+	specific to you and your assignment:
+	
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 3
+ * Author: Bill Gates
+ * Date:  February 16, 2022
+ ********************************/
+</pre>	
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file AND ALSO
+	the two image files you used for the project
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program3</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.&nbsp;
+	The image files will be in the <code>data</code> subfolder of your project folder.
+    <br/><br/>
+</blockquote>
+
+</body>
+
+</html>
