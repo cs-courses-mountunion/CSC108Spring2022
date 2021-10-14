@@ -1,1 +1,273 @@
+<html>
+<head>
+<title>CSC 108 Program # 5 </title>
+</head>
 
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            5&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 3/2/22
+        </h2>
+		<h3> Due at or before the <em>END</em> of class </h3>
+</center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Write a Processing program that allows the user to "pin" a drawing to a screen location 
+	by clicking the mouse.&nbsp; There should be a different drawing used depending on whether the
+	left or right mouse button is clicked.&nbsp; Pressing the spacebar should clear the screen.&nbsp; You
+	will need to use Processing functions to correctly solve this problem.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work just like <a href="prog5demo.zip" target="_blank"> 
+	this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the demo and
+	see how your program should work. <br/><br/>
+	Run the demo program and click either
+	mouse button several times at different locations on the screen; then press the spacebar 
+	on the keyboard, then click both mouse buttons again several times at various screen locations.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then paste the 
+	following code into the editor window:
+
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 5
+ * Author: Bill Gates
+ * Date:  March 2, 2022
+ ********************************/
+
+ 
+int numClicks;
+int[] x;
+int[] y;
+char[] direction;
+
+void setup() {
+  size(1000, 800);
+
+} // end of setup function
+
+
+
+void draw() {
+
+
+  if (keyPressed) {
+    if (key == ' ') {
+
+    }
+  } // end if (keyPressed)
+
+  
+  if (mousePressed) {
+  
+    if (mouseButton == LEFT) {
+	
+    }
+
+    if (mouseButton == RIGHT) {
+	
+    }
+
+  } // end if (mousePressed)
+
+  
+} // end of draw function
+
+
+void drawLeft(int x, int y) {
+
+} // end of drawLeft function
+
+
+void drawRight(int x, int y) {
+
+} // end of drawRight function
+</pre>
+
+    When you run this program, nothing much will happen &mdash; this is just the starting
+	structure for your program.
+</blockquote>
+
+<strong>Your Task, Step 1:&nbsp; Instantiate one <code>int</code> variable, two <code>int</code> Arrays, and one 
+<code>char</code> Array.</strong>
+<blockquote>
+    In the <code>setup</code> function, set the variable named <code>numClicks</code> to zero.&nbsp; Then 
+	set up the three arrays named <code>x</code>, <code>y</code> and <code>direction</code> so that they can
+	store 500 values each.&nbsp; Refer to Example 11-9 in the
+    <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	textbook</a>
+	for an example of how to do this.
+</blockquote>
+
+<strong>Your Task, Step 2:&nbsp; Write the initial versions of the other functions for the program so
+        that creatures are drawn when the mouse is clicked.</strong>
+<blockquote>
+    Here is an outline of the logic you should use for the <code>draw</code> function of your program,
+	in order to get it to work as the sample does: <br/>
+	<ol>
+	  <li> if (the spacebar has been pressed):
+	      <ol type="a">
+	          <li> Set the background to 204 </li>
+		      <li> store the value zero in <code>numClicks</code> </li>
+		  </ol> </li>
+	  <li> if (the mouse has been clicked):
+          <ol type="a">
+		      <li> add 1 to <code>numClicks</code> </li>
+			  <li> store <code>mouseX</code> in <code>x[numClicks]</code> </li>
+			  <li> store <code>mouseY</code> in <code>y[numClicks]</code> </li>
+			  <li> if (the left mouse button was clicked):
+			      <ul type="circle">
+				      <li> store <code>'L'</code> in <code>direction[numClicks]</code> (don't forget the single quotes)</li>
+				  </ul> </li>
+			  <li> if (the right mouse button was clicked):
+			      <ul type="circle">
+				      <li> store <code>'R'</code> in <code>direction[numClicks]</code> </li>
+				  </ul> </li>
+          </ol> </li>	
+	  <li> for each value of <code>i</code> from 1 up to and including <code>numClicks</code>:
+	       <ol type="a">
+		       <li> if <code>direction[i]</code> is <code>'L'</code>:
+			      <ul type="circle">
+				      <li> call the <code>drawLeft</code> function using
+	                          (<code>x[i]</code>, <code>y[i]</code>) as arguments</li>
+				  </ul> </li>
+		       <li> if <code>direction[i]</code> is <code>'R'</code>:
+			      <ul type="circle">
+				      <li> call the <code>drawRight</code> function using
+	                          (<code>x[i]</code>, <code>y[i]</code>) as arguments</li>
+				  </ul> </li>
+		   </ol> </li>
+	</ol> 
+	
+	Go to Example 3-21 in the "Custom Shapes" section of Chapter 3 of the 
+    <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	textbook</a>,
+	copy the 14 lines after the "// left creature" comment and paste them in as the body of the <code>
+	drawLeft</code> function.&nbsp; Then find the <code>endShape();</code> statement in the code you just
+	copied and add <code>CLOSE</code> inside the parentheses.&nbsp; Next, copy the lines from example 3-21
+	after the "// right creature" comment and paste them
+	in as the body of the <code>drawRight</code> function, and add <code>CLOSE</code> inside the parentheses
+	of the <code>endShape();</code> statement in this code block also.<br/><br/>
+	   <b>Exercise 3-21:</b><br/>
+<textarea rows="8" cols="50">
+size(480, 120);
+
+// Left creature
+fill(153, 176, 180);
+beginShape();
+vertex(50, 120);
+vertex(100, 90);
+vertex(110, 60);
+vertex(80, 20);
+vertex(210, 60);
+vertex(160, 80);
+vertex(200, 90);
+vertex(140, 100);
+vertex(130, 120);
+endShape();
+fill(0);
+ellipse(155, 60, 8, 8);
+
+// Right creature
+fill(176, 186, 163);
+beginShape();
+vertex(370, 120);
+vertex(360, 90);
+vertex(290, 80);
+vertex(340, 70);
+vertex(280, 50);
+vertex(420, 10);
+vertex(390, 50);
+vertex(410, 90);
+vertex(460, 120);
+endShape();
+fill(0);
+ellipse(345, 50, 10, 10);
+</textarea>
+       <br/><br/>
+	
+	When you run this version of your program after following the directions above, clicking the left mouse button anywhere on the screen 
+	should make the
+	left creature appear, clicking the right mouse button makes the right creature appear, and pressing
+	the space bar erases the screen.&nbsp; The next step is to add the ability for the functions to
+	draw the creatures in specific positions in the window.
+	
+</blockquote>
+
+<strong>Your Task, Step 3:&nbsp; Change the <code>drawLeft</code> and <code>drawRight</code> functions 
+        to draw the shapes relative to the (<code>x</code>, <code>y</code>) parameters instead of at
+		fixed positions on the screen.</strong>
+<blockquote>
+    We want the creatures to be drawn so that the tip of their noses is drawn at the mouse position when
+	the user clicks a mouse button.&nbsp; This means that the vertex that represents the tip of the creature's
+	nose will use (x, y) as its arguments instead of actual numbers, and the other vertex statements in the functions
+	will use (x plus or minus a number, y plus or minus a number) to define their points.&nbsp; Then when we
+    call the functions with different arguments, the creatures will appear in different screen locations.
+    <br/><br/>
+	
+    In the <code>drawLeft</code> function, the vertex that represents the tip of the creature's nose is
+	(210, 60).&nbsp; So we need to change each of the vertex statements in this function to be relative
+	to that point.&nbsp; The first vertex statement in the function is <code>vertex(50,&nbsp;120);</code>.&nbsp;
+	To make this relative to the point (210, 60), we need to change the first statement to be
+	<code>vertex(210-160,&nbsp;60+60);</code>, because 50&nbsp;==&nbsp;210&nbsp;-&nbsp;160, and 
+	120&nbsp;==&nbsp;60&nbsp;+&nbsp;60.&nbsp; The second vertex statement in the function is 
+	<code>vertex(100,&nbsp;90);</code>,
+	so it needs to be changed to <code>vertex(210-110,&nbsp;60+30);</code><br/><br/>
+	
+	Change the rest of the <code>vertex</code> statements in the <code>drawLeft</code> function so that they
+	are defined relative to the point (210, 60).&nbsp; You will also need to change the <code>ellipse</code>
+	statement so that the first argument is 210 minus something that is equal to 155.&nbsp; If you run this
+	version of the program and click the left mouse button, it should work exactly as before.<br/><br/>
+	
+	Now, change all of the "<code>210</code>"s in the <code>vertex</code> statements and the 
+	<code>ellipse</code> statement, replacing them with <code>x</code>.&nbsp; Similarly, change all of the 
+	"<code>60</code>"s to <code>y</code>.&nbsp; Now when you run the program, the bluish creatures will be
+	drawn in various screen locations, depending on where the mouse was clicked.<br/><br/>
+	
+	Change the <code>drawRight</code> function in a similar way, so that the greenish creatures are drawn at
+	the mouse position when the right mouse button is clicked.&nbsp; The tip of the right creature's nose
+	is located at the point (280, 50) in the original code.
+</blockquote>
+
+<strong>Your Task, Step 4:&nbsp; Add some extra feature to the <code>drawLeft</code> and <code>drawRight</code>
+functions.</strong>
+<blockquote>
+    If you look at the results of your program now, and compare them to the demo program given above, you'll
+	notice that an extra feature was added to the demo program in addition to the code from Example 3-21 
+	(specifically, the creatures are drawn with eyebrows in the demo program, and your creatures don't have 
+	eyebrows).&nbsp; Add statements to the
+	<code>drawLeft</code> and <code>drawRignt</code> functions in your program
+	to draw some extra feature(s) on your
+	creatures.&nbsp; The choice of what to draw is up to you -- can you give the creatures triangular white
+	teeth?&nbsp; How about a hat?&nbsp; What about different colors for different parts of the head, neck, etc.?
+	&nbsp;Can you give your creatures arms, legs, etc.?&nbsp; Use your creativity to add at least one
+	extra visual feature to each one of your creatures.
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Be sure to change the comment header for your program so that it uses your name and
+	has today's date.
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program5</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+    <br/><br/>
+</blockquote>
+
+</body>
+
+</html>
