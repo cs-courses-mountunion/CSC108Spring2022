@@ -1,1 +1,142 @@
+<html>
+<head>
+<title>CSC 108 Program # 4 </title>
+</head>
 
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            4&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 2/23/22
+        </h2>
+		<h3> Due at or before the <em>END</em> of class </h3>
+</center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Write a Processing program that "connects the dots" when the user clicks the mouse
+	in various locations on in the output window.&nbsp; If the user presses the space bar,
+	the screen should be reset to blank.&nbsp; Each mouse click causes the program to 
+	"remember" the location of the mouse when the click occurred.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work just like <a href="prog4demo.zip" target="_blank"> 
+	this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the demo and
+	see how your program should work. <br/><br/>
+	Run the demo program, move the mouse around the screen, then click either
+	mouse button several times while moving the mouse around, then press the spacebar 
+	on the keyboard, then click either mouse button again several times.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then paste the 
+	following code into the editor window:
+
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 4
+ * Author: Bill Gates
+ * Date:  February 23, 2022
+ ********************************/
+
+ 
+void setup() {
+  size(800, 450);
+} // end of setup function
+
+
+
+void draw() {
+
+
+  if (keyPressed) {
+    if (key == ' ') {
+
+    }
+  } // end if (keyPressed)
+
+  
+  if (mousePressed) {
+
+  } // end if (mousePressed)
+
+  
+} // end of draw function
+</pre>
+
+    When you run this program, nothing much will happen &mdash; this is just the starting
+	structure for your program.
+</blockquote>
+
+<strong>Your Task, Step 1:&nbsp; Declare and Instantiate one <code>int</code> variable and two <code>int</code> Arrays</strong>
+<blockquote>
+    Above the <code>setup</code> function in your program, declare an <code>int</code> 
+	variable named <code>numClicks</code> and set it to zero.&nbsp; Then declare two 
+	Arrays that can store
+	<code>int</code> values.&nbsp; One of the arrays will keep track of the horizontal positions
+	of the mouse clicks, and the other array will keep track of the vertical positions of the
+	mouse clicks.&nbsp; It would make sense to call these arrays <code>x</code> and <code>y</code>,
+	but you can use any names you like.&nbsp; These arrays should be set up initially to
+	store 500 values each.&nbsp; Refer to Example 11-9 in the
+    <a href="../resources/oreillyAccessInstr.html" target="_blank">
+	textbook</a>
+	for an example of how to do this.
+</blockquote>
+
+<strong>Your Task, Step 2:&nbsp; Write the <code>draw</code> function for the program</strong>
+<blockquote>
+    Here is an outline of the logic you should use for the <code>draw</code> function of your program,
+	in order to get it to work as the sample does: <br/>
+	<ol>
+	  <li> Set the background to a medium to dark color that you like </li>
+	  <li> if (the spacebar has been pressed):
+	      <ol type="a">
+		      <li> store the value zero in <code>numClicks</code> </li>
+		  </ol> </li>
+	  <li> if (the mouse has been clicked):
+          <ol type="a">
+		      <li> add 1 to <code>numClicks</code> </li>
+			  <li> store <code>mouseX</code> in <code>x[numClicks]</code> </li>
+			  <li> store <code>mouseY</code> in <code>y[numClicks]</code> </li>
+          </ol> </li>	
+      <li> set the stroke color to some color you like </li>
+      <li> set the fill color to some color you like </li>
+	  <li> for each value of <code>i</code> from 1 up to and including <code>numClicks</code>:
+	       <ol type="a">
+		       <li> draw an ellipse centered at the point (<code>x[i]</code>, <code>y[i]</code>) 
+	                that is 30 &times; 30 pixels in size </li>
+               <li> draw a line from (<code>x[i]</code>, <code>y[i]</code>) 
+	                to (<code>x[i-1]</code>, <code>y[i-1]</code>) </li>
+		   </ol> </li>
+      <li> set the stroke color to some color you like that is different than the one used above</li>
+      <li> set the fill color to some color you like that is different than the one used above</li>
+	  <li> draw an ellipse centered at the point (<code>mouseX</code>, <code>mouseY</code>) 
+	       that is 30 &times; 30 pixels in size
+      <li> draw a line from (<code>mouseX</code>, <code>mouseY</code>) 
+	       to (<code>x[numClicks]</code>, <code>y[numClicks]</code>) </li>
+	</ol>
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Be sure to change the comment header for your program so that it uses your name and
+	has today's date.
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program4</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+    <br/><br/>
+</blockquote>
+
+</body>
+
+</html>
