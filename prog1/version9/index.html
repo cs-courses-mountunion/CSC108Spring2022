@@ -1,1 +1,140 @@
+<html>
+<head>
+<title>CSC 108 Program # 1 </title>
+</head>
 
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            1&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 1/21/22
+        </h2></center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Write a Processing program that draws a white circle at the mouse position in a drawing
+	window that is sized 700 x 500 pixels, and draws four yellow arcs surrounding
+	the circle that follow it wherever it moves in the drawing window.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work just like <a href="prog1demo.zip" target="_blank"> this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the demo and
+	see how your program should work.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then copy Example 2-2
+    from Chapter 2 of the text into the editor.<br/><br/>
+	   <b>Example 2-2:</b><br/>
+<textarea rows="8" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  if (mousePressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+</textarea>
+       <br/><br/>
+	
+	Change the parameters in the <code>size</code>
+	function so that the screen size is correct for this problem.&nbsp; Next, delete all of the lines
+	inside the <code>draw</code> function EXCEPT for the last one (the
+    "<code>ellipse(mouseX, mouseY, 80, 80);</code>" line).&nbsp; If you run the program now, you should
+	see a bunch of circles being drawn over one another.<br/><br/>
+	
+	Paste the following code as the first lines that are inside the curly braces
+	of your <code>draw</code> function:
+
+<pre>
+        // clear screen and set background color
+        background(204);
+
+        // set filling color for circle at mouse position
+        fill(255);
+</pre>
+
+    If you run the program now, the trail of circles won't be there; only one circle should
+	be drawn, with its center at the mouse position.
+</blockquote>
+
+<strong>Your Task:</strong>
+<blockquote>
+    You need to add code to the <code>draw</code> function of your program that will draw four
+	yellow arcs that are 90&deg; in size.&nbsp; The arcs should be positioned at
+	the corners of the circle as seen in the demo. <br/><br/>
+	
+	In your <code>draw</code> function, set the fill color to a yellow shade
+	(use the Processing menu option <b>Tools &rarr; Color Selector</b> as described in 
+	the textbook to pick a shade of yellow that you like), and then draw 
+	four arcs, using the <code>arc</code> function.&nbsp; The point of the arc should be directed
+	toward the white circle -- see the demo program for a visual example of this.&nbsp; The arcs
+	in the example 
+	have a width and a height of 60 pixels, but you
+	can choose different sizes for your arcs, as long as they are located at the four
+	corners of the white circle, equally spaced around it.
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Place a comment header at the top of your program similar to this example, with information
+	specific to you and your assignment:
+	
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 1
+ * Author: Bill Gates
+ * Date: January 21, 2022
+ ********************************/
+</pre>	
+</blockquote>
+
+<strong>Extras:</strong>
+<blockquote>
+    Just for fun, feel free to add some extras to your program.&nbsp; For example, 
+	can you change the plain white circle at the mouse position into
+	a Pumpkin or an Easter Egg or something else?&nbsp; Have fun experimenting with Processing functions and statements.
+</blockquote>
+
+<strong>Due Date:</strong>
+<blockquote>
+    January 21, 2022, at the end of class.&nbsp; <br/><br/>
+    You must complete this assignment individually.
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program1</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+    <br/><br/>
+    Here are some specific directions for submitting work to a D2L Dropbox:	
+	<ol>
+	    <li> Use a web browser to <a href="http://d2l.mountunion.edu" target="_blank"> login to D2L</a>,
+	         and go to the CSC 108 course in your course list.<br/><br/> </li>
+		
+	    <li> Choose "Assessments", then "Dropbox", and 
+	         then click on the link to the "Program1" dropbox folder.&nbsp; This will display the "Program1 Submit Files" page,
+	         and you will want to find the "Add a File" button about halfway down the page &mdash; click this button now.<br/><br/> </li>
+		
+	    <li> Click on the "Upload" button in the dialog window that appears, browse to the folder where you saved the final version
+		     of your program, 
+   	         and select the file with the <code>.pde</code> extension.&nbsp; Click the blue "Add" button, then click the blue "Submit" button.&nbsp;
+	         If you did this correctly, you should receive a "File submission successful" message in your browser.&nbsp; You will also receive
+	         an e-mail message confirming that you submitted the file to the CSC 108 Program1 dropbox.<br/><br/> </li>
+	</ol>
+</blockquote>
+
+</body>
+
+</html>
