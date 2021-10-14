@@ -1,1 +1,186 @@
+<html>
+<head>
+<title>CSC 108 Program # 1 </title>
+</head>
 
+<body>
+<font color="#660066">
+<center><h2>CSC 108&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Program #
+            1&nbsp;&nbsp;&nbsp; &mdash; &nbsp;&nbsp;&nbsp; Due:&nbsp; 1/21/22
+        </h2></center></font>
+
+<strong>Assignment:</strong>
+<blockquote>
+    Write a Processing program that draws a white circle at the mouse position in a drawing
+	window that is sized 700 x 500 pixels, and draws two purple triangles that 
+	chase the vertical position of the white circle up and down,
+	eventually catching the white circle if the mouse movement is stopped.
+</blockquote>
+
+<strong>Sample:</strong>
+<blockquote>
+    Your program should work just like <a href="prog1demo.zip" target="_blank"> this sample</a>.&nbsp; Right-click
+	on the link in the preceding sentence and save the file in your CSC108 folder.&nbsp; Then using File Explorer, right-click
+	on the .zip file and choose "Extract All" from the pop-up menu.&nbsp; After extracting the files from the .zip file,
+	there will be a file with a <code>.exe</code> extension &ndash; double-click on the file to run the demo and
+	see how your program should work.
+</blockquote>
+
+<strong>Starting Point:</strong>
+<blockquote>
+    To get started on this assignment, make a new Processing sketch, then copy Example 2-2
+    from Chapter 2 of the text into the editor.<br/><br/>
+	   <b>Example 2-2:</b><br/>
+<textarea rows="8" cols="50">
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  if (mousePressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+</textarea>
+       <br/><br/>
+	
+	Change the parameters in the <code>size</code>
+	function so that the screen size is correct for this problem.&nbsp; Next, delete all of the lines
+	inside the <code>draw</code> function EXCEPT for the last one (the
+    "<code>ellipse(mouseX, mouseY, 80, 80);</code>" line).&nbsp; If you run the program now, you should
+	see a bunch of circles being drawn over one another.<br/><br/>
+	
+	Paste the following code as the first lines that are inside the curly braces
+	of your <code>draw</code> function:
+
+<pre>
+        // clear screen and set background color
+        background(204);
+
+        // set filling color for circle at mouse position
+        fill(255);
+</pre>
+
+    If you run the program now, the trail of circles won't be there; only one circle should
+	be drawn, with its center at the mouse position. <br/><br/>
+	
+	Next, paste this line at the very top of your program (before the "void setup" line):
+	
+<pre>
+        float x, y;
+</pre>
+
+    Then paste these lines inside the curly braces of the <code>setup</code> function:
+	
+<pre>
+        x = 350;
+        y = 250;
+</pre>
+
+    Finally, at the end of your <code>draw</code> function, set the fill color to a purple shade
+	(use the Processing menu option <b>Tools &rarr; Color Selector</b> as described in
+	the textbook to pick a shade of purple that you like), and then draw two
+	triangles; one of the triangles has its base located along the left-hand side of the window and
+	points to the right, and the other triangle points to the left from its base that is located along 
+	the right-hand side of the window.&nbsp; The vertical position of the tips of both of the triangles
+	should be <code>y</code>. 
+	<br/><br/>
+
+    If you run the program now, you should have two purple triangles
+	whose tips are located at the center of the screen, with
+    a white circle following your mouse around.&nbsp; Ask your instructor for help if you have
+    trouble getting to this point.	
+</blockquote>
+
+<strong>Your Task:</strong>
+<blockquote>
+    Right now, your program always draws the purple triangles at the same position 
+	in the window.&nbsp;
+	You need to add code to the <code>draw</code> function of your program that will 
+	calculate a new position for the tips of the triangles based on
+	the old position of their tips and where the mouse is located in the window.&nbsp; To do
+	this, you should add a fraction of the distance from the mouse location to the tip of
+	the triangles to the <code>y</code> variable (the fraction
+	is needed to make the triangles "chase" the mouse -- if we added the entire distance, then
+	the triangles and the circle would always be in the same vertical position).<br/><br/>
+	
+	Consider the vertical position of the tips of the triangles:&nbsp; the distance between
+	the tips and the center of the circle can be computed by subtracting the vertical 
+	position of the
+	triangle's tip from the mouse's vertical position.&nbsp; This value should be divided 
+	by 25, and 
+	then that value should be added to the vertical position of the tips of the triangles
+	to set a new value for the tips' vertical position.&nbsp; 
+	You can do this either 
+	before or after the triangles are drawn in the <code>draw</code> function; either way will 
+	work.
+</blockquote>
+
+<strong>Comment Header at the Top of your Program:</strong>
+<blockquote>
+    Place a comment header at the top of your program similar to this example, with information
+	specific to you and your assignment:
+	
+<pre>
+/********************************
+ * CSC 108
+ * Programming Assignment # 1
+ * Author: Bill Gates
+ * Date: January 21, 2022
+ ********************************/
+</pre>	
+</blockquote>
+
+<strong>Extras:</strong>
+<blockquote>
+    Just for fun, feel free to add some extras to your program.&nbsp; For example, 
+	can you change the plain white circle at the mouse position into
+	a Pumpkin or an Easter Egg or something else?&nbsp; Have fun experimenting with Processing functions and statements.
+	<br/><br/>
+	If you would like, add this code to the very bottom of your <code>draw</code> function:
+	
+<pre>
+        if (mousePressed) {
+            x = y = 700;
+        }
+</pre>
+
+    This will add the ability to reposition the purple triangles off the screen whenever the mouse 
+	button is clicked.&nbsp; Give it a try!
+</blockquote>
+
+<strong>Due Date:</strong>
+<blockquote>
+    January 21, 2022, at the end of class.&nbsp; <br/><br/>
+    You must complete this assignment individually.
+</blockquote>
+
+<strong>How to Submit the Program for Grading: </strong>
+<blockquote>
+    When you have completed your programming assignment, upload the <code>.pde</code> file
+	from the directory in which you saved your final version of the programming assignment
+	into the <b>Program1</b> dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+    <br/><br/>
+    Here are some specific directions for submitting work to a D2L Dropbox:	
+	<ol>
+	    <li> Use a web browser to <a href="http://d2l.mountunion.edu" target="_blank"> login to D2L</a>,
+	         and go to the CSC 108 course in your course list.<br/><br/> </li>
+		
+	    <li> Choose "Assessments", then "Dropbox", and 
+	         then click on the link to the "Program1" dropbox folder.&nbsp; This will display the "Program1 Submit Files" page,
+	         and you will want to find the "Add a File" button about halfway down the page &mdash; click this button now.<br/><br/> </li>
+		
+	    <li> Click on the "Upload" button in the dialog window that appears, browse to the folder where you saved the final version
+		     of your program, 
+   	         and select the file with the <code>.pde</code> extension.&nbsp; Click the blue "Add" button, then click the blue "Submit" button.&nbsp;
+	         If you did this correctly, you should receive a "File submission successful" message in your browser.&nbsp; You will also receive
+	         an e-mail message confirming that you submitted the file to the CSC 108 Program1 dropbox.<br/><br/> </li>
+	</ol>
+</blockquote>
+
+</body>
+
+</html>
