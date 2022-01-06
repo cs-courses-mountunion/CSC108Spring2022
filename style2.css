@@ -118,6 +118,7 @@ background: #990B99 url('cssimages/purphidr2.jpg');
 
 .middle table{
 	border-collapse: collapse;
+	text-align: left;
 }
 
 .right {
