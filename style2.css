@@ -95,11 +95,12 @@ background: #990B99 url('cssimages/purphidr2.jpg');
 	
 .middle {
 	float: left;
-	width: 65%;
+	width: 59%;
 	margin: 0 10px;
 	padding: 1% 1%;
 	text-align: justify;
 	color: #991799;
+	
 }
 
 .middle ul {
@@ -113,6 +114,10 @@ background: #990B99 url('cssimages/purphidr2.jpg');
 
 .middle blockquote {
     margin-left: 30px;
+}
+
+.middle table{
+	border-collapse: collapse;
 }
 
 .right {
