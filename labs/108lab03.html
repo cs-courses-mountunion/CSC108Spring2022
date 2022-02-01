@@ -92,11 +92,11 @@ for (int i = 6; i &lt;= 9; i++) {
 }
 println("program concluded.");
 </pre>  
-       What this for loop does in its header is: 
+	  What this <code>for</code> loop does in its header is: 
 	  <ul>    <li>Sets up an initial value for i (6)</li>
 		  <li>Tests to make sure i is still less than or equal to 9</li>
 		  <li>Increments i by 1 (meaning, updates the value of i to i+1) each time the loop runs</li></ul>
-	The code that executes inside the for loop:
+	  The code that executes inside the <code>for</code> loop:
 	  <ul>    <li>prints "This time i = " to the console</li>
 		  <li>prints the value of i, and then goes to the next line</li>
 		  <li>prints a tab, followed by "i squared = "</li>
@@ -143,13 +143,13 @@ What this program is doing:
 	<li>declares a global integer variable, howManyCircles, and initializes its value to 4</li>
 	<li>in the setup() function, sets the window size, fill color, stroke color, and drastically reduces the frameRate (this will matter later!)</li>
 	<li>in the draw() function, resets the background color, declares an integer variable x and initializes it to 40</li>
-	<li>sets up the header of a for loop:
+	<li>sets up the header of a <code>for</code> loop:
 		<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
   <li style="margin-left:2em">sets an initial value of i (1)</li>
   <li style="margin-left:2em">tests to make sure i is still less than or equal to howManyCircles</li>
  <li style="margin-left:2em">increments i by 1 each time the loop runs</li>
 		</ol></li>
-	<li>has the following code run each time the for loop runs:
+	<li>has the following code run each time the <code>for</code> loop runs:
 		<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
 		<li style="margin-left:2em">draws a circle centered at (x, 40) with radius = 45</li>
   <li style="margin-left:2em">updates the value of x to x+50</li>
@@ -169,7 +169,7 @@ What this program is doing:
        Modify the program so that it draws green circles that are displayed going down and
        to the right diagonally from the upper-left corner of the window.&nbsp; Change the program
 	   so that seven green circles are drawn going down the screen.&nbsp; Show your program
-	   to your instructor when you get it working properly.
+	   to your instructor when you get it working properly. (2 pts)
 	 </span>
 	   <br><br> </li>
 
@@ -190,7 +190,7 @@ What this program is doing:
        user clicks the mouse button, <code>howManyCircles</code> is increased by one, so
 	   that clicking the mouse repeatedly causes more and more circles to appear on
 	   screen.&nbsp; Show your program
-	   to your instructor when you get it working properly.
+	   to your instructor when you get it working properly. (2 pts) [Once you get it working right, try commenting out the "frameRate(8);" line near the top...why does this happen?!]
 	 </span>
 	   <br><br> </li>
 
@@ -198,7 +198,7 @@ What this program is doing:
        of color that artists have contributed.&nbsp; The site is 
        <a href="https://web.archive.org/web/20121017134122/http://www.colorschemer.com:80/" target="_blank">
 	   http://www.colorschemer.com</a>
-	   &mdash; visit it now.&nbsp; Click on the "Scheme Gallery" top menu item, and scroll
+	   &mdash; visit it now.&nbsp; (This site is available through the Web Archive "WayBackMachine" -- it's pretty cool and fun!) &nbsp; Click on the "Scheme Gallery" top menu item, and scroll
 	   down the first page of color schemes that are displayed.&nbsp; At the bottom of
 	   the page, you see a navigation line that allows you to go to the next page of
 	   schemes or to select a specific page number.&nbsp; Browse through a couple of pages
@@ -209,7 +209,8 @@ What this program is doing:
 	   as the background color for your Processing program; to see what the color number
 	   would be for this color, move your mouse so that it is hovering over that square in
 	   the scheme.&nbsp; What you should notice is that a little pop-up hint appears with 
-	   the strange information "#60715F" &mdash; what the heck is that?&nbsp; If you are
+	   the hexadecimal information "#60715F." &nbsp; You can use this code just like you'd use a hex code from Processing's Color Selector.
+	  <!-- &mdash; what the heck is that?&nbsp; If you are
 	   familiar with setting colors in web pages, you may recognize this format of 
 	   color information.&nbsp; It turns out that the first two characters after the #
        represent the red part of the color, the middle two characters are the green value,
@@ -217,14 +218,14 @@ What this program is doing:
        is that the values are specified in hexadecimal notation, not normal decimal numbers.
        Luckily, Processing can work with hexadecimal values if we use special notation
        when using those values.&nbsp; If a numeric value in Processing starts with "0x", then
-	   that value is interpreted as being in hexadecimal notation.
+	   that value is interpreted as being in hexadecimal notation. -->
        <br/><br/>
        Here's an example of how we can use these values &mdash; in the program you currently
 	   are running in your Processing editor window, locate the <code>background</code> function
 	   call at the top of the <code>draw</code> function, and change it to use the #60715F color
 	   like this:
 <pre>
-    background( 0x60, 0x71, 0x5F );
+    background(#60715F);
 </pre>	   
        Pretty nice, huh?&nbsp; Now change the <code>stroke</code> and <code>fill</code>
 	   function calls in the <code>setup</code> function so that they both use the
@@ -234,9 +235,9 @@ What this program is doing:
   <li> Copy this code into the Processing editor window:
 <pre>
 size(400, 400);
-background(0xc8, 0xc6, 0x9f);
-stroke(0x82, 0x68, 0x3c);
-fill(0xa6, 0xac, 0x92);
+background(#C8C69F);
+stroke(#82683C);
+fill(#A6AC92);
 strokeWeight(3);
 
 int x, y;
@@ -303,7 +304,7 @@ for (int col = 1; col &lt;= 6; col++) {
 	   your program draws 5 rows of 8 columns of squares &mdash; you should only have 5 
 	   <code>rect</code> statements in your entire program to accomplish this.&nbsp; 
 	   Show your program
-	   to your instructor when you get it working properly.
+	   to your instructor when you get it working properly. (2 pts)
 	 </span>
 	   <br><br> </li>
 
