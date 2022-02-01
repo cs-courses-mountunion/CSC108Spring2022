@@ -10,7 +10,7 @@
 <font color="#660066">
 <center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
             Lab Exercise # 3&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
-            Due:&nbsp; February 7, 2022 (at end of class) </h2></center></font>
+            Due:&nbsp; February 7, 2022 (anything not shown to your instructor by the end of class should be submitted by 11:59pm on D2L) </h2></center></font>
 
 Topics:&nbsp; Repetition with <code>for</code> loops <br/><br/>
 In these lab exercises, instructions with a yellow background indicate a task that should be
@@ -25,7 +25,7 @@ demonstrated to your instructor when completed, in order to earn points for the 
 	   use any spaces in the file name).
        <br/><br/> </li>
 
-he section entitled "Repetition" in Chapter 4 of the 
+In the section entitled "Repetition" in Chapter 4 of the 
        <a href="../resources/oreillyAccessInstr.html" target="_blank">
 	   textbook</a>, read the text and try
        the code from Example 4-6&mdash; actually copy the code from the book and
@@ -54,7 +54,7 @@ for (int i = 20; i &lt; 400; i += 60) {
 
   <li> <span class="yellow">
        Change the program you are working on so that the lines drawn are straight up and down.
-	   &nbsp; When you have achieved this, show your results to your instructor.
+	   &nbsp; When you have achieved this, show your results to your instructor. (1 pt)
 	   </span>
 	   <br><br> </li>
 
@@ -92,7 +92,17 @@ for (int i = 6; i &lt;= 9; i++) {
 }
 println("program concluded.");
 </pre>  
-       Run the program and observe the output printed in the Console.&nbsp; Then change the
+       What this for loop does in its header is: 
+	  <ul>    <li>Sets up an initial value for i (6)</li>
+		  <li>Tests to make sure i is still less than or equal to 9</li>
+		  <li>Increments i by 1 (meaning, updates the value of i to i+1) each time the loop runs</li></ul>
+	The code that executes inside the for loop:
+	  <ul>    <li>prints "This time i = " to the console</li>
+		  <li>prints the value of i, and then goes to the next line</li>
+		  <li>prints a tab, followed by "i squared = "</li>
+		  <li>prints the value of i*i, which of course, is i squared</li></ul>
+		  
+	  Run the program and observe the output printed in the Console.&nbsp; Then change the
 	   program so that it prints the squares of the multiples of 3 between 27 and 42, inclusive.&nbsp;
 	   Hint:&nbsp; you should only make changes to the heading of the <code>for</code> loop, not
 	   to the loop body.
