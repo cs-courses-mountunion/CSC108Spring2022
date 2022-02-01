@@ -112,8 +112,8 @@ println("program concluded.");
        Add code to the loop in your current program so that it prints the cube of each of the
 	   <b><code>i</code></b> values, on a separate line immediately following the square of each of the values.&nbsp;
 	   Then change the loop heading so that your program prints the squares and cubes of the multiples
-	   of 4 between 8 and 28.&nbsp; Show your program
-	   to your instructor when you get it working properly.
+	   of 4 between 8 and 28, inclusive (so the numbers your for loop will be looking at are between 4-28).&nbsp; Show your program
+	   to your instructor when you get it working properly. (2 pts)
 	 </span>
 	   <br><br> </li>
 
@@ -138,7 +138,24 @@ void draw() {
     } // end for
 } // end draw
 </pre>  
-       Run the program and observe the results.&nbsp; Then change the
+What this program is doing:
+<ul>
+	<li>declares a global integer variable, howManyCircles, and initializes its value to 4</li>
+	<li>in the setup() function, sets the window size, fill color, stroke color, and drastically reduces the frameRate (this will matter later!)</li>
+	<li>in the draw() function, resets the background color, declares an integer variable x and initializes it to 40</li>
+	<li>sets up the header of a for loop:
+		<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+  <li style="margin-left:2em">sets an initial value of i (1)</li>
+  <li style="margin-left:2em">tests to make sure i is still less than or equal to howManyCircles</li>
+ <li style="margin-left:2em">increments i by 1 each time the loop runs</li>
+		</ol></li>
+	<li>has the following code run each time the for loop runs:
+		<ol style="list-style-type: lower-alpha; padding-bottom: 0;:>
+		<li style="margin-left:2em"">draws a circle centered at (x, 40) with radius = 45</li>
+  <li style="margin-left:2em">updates the value of x to x+50</li>
+	</ol></li>   
+	
+	  Run the program and observe the results.&nbsp; Then change the
 	   program so that it draws 8 circles.
        <br><br> </li>
 	   
