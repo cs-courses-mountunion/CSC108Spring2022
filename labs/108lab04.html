@@ -39,7 +39,7 @@ demonstrated to your instructor when completed, in order to earn points for the 
 	   lab activity.&nbsp; Leave the File Explorer window open on your
 	   desktop. &ndash; we'll use this folder whenever prompted by the textbook
 	   or the lab instructions to find or use a file.&nbsp; Ask your instructor for help if you need it
-	   to extract the files from the .zip file<br/><br/>
+	   to extract the files from the .zip file.<br/><br/>
 	   </li>
 	   </ol>
 
@@ -53,8 +53,9 @@ demonstrated to your instructor when completed, in order to earn points for the 
 	   photography, detailed diagrams, and different typefaces.<br/><br/>
 	   
 	   Using the sketch you just created, select <b>Add File</b> from the Sketch menu.&nbsp; Find the
-	   <code>lunar.jpg</code> file in the folder you just unzipped and select it.&nbsp; If everything 
-	   went well, the Message Area will read "One file added to the sketch."<br/><br/>
+	   <code>lunar.jpg</code> file in the folder you just unzipped and select it.&nbsp; 
+	  <!--If everything went well, the Message Area will read "One file added to the sketch."-->
+	  <br/><br/>
 
        To check for the file, select <b>Show Sketch Folder</b> in the Sketch menu.&nbsp; You should see 
 	   a folder named <b>data</b>, with a copy of <code>lunar.jpg</code> inside.&nbsp; When you add a file 
@@ -63,8 +64,7 @@ demonstrated to your instructor when completed, in order to earn points for the 
 	   area of the Processing window.&nbsp; The files will be copied to the data folder the same way 
 	   (and the data folder will be created if none exists).<br/><br/>
 
-       You can also create the data folder outside of Processing and copy files there yourself.&nbsp; You 
-	   won't get the message saying that files have been added, but this is a helpful method when you're 
+       You can also create the data folder outside of Processing and copy files there yourself.&nbsp; This is a helpful method when you're 
 	   working with large numbers of files.<br/><br/>
 	   
   <li> Start with the "Images" section in Chapter 7 of the 
@@ -129,7 +129,7 @@ void draw() {
 	   sketch).&nbsp; Then change the code example so that the images representing your initials
 	   are displayed in the output window.&nbsp; Each of the files is 160 pixels &times;
 	   120 pixels, so they will fit exactly in the window, because it is sized 480 &times; 120.
-	   &nbsp; When you have achieved this, show your results to your instructor.
+	   &nbsp; When you have achieved this, show your results to your instructor. (2 pts)
 	   </span>
 	   <br><br> </li>
 
@@ -196,9 +196,9 @@ void draw() {
        parameter is the width of the image being displayed, and the fifth parameter is the height
 	   of the image.&nbsp; In each of the <code>image</code> statements in your program,
 	   the fourth parameter should be a fixed number that represents one-third of the width
-	   of the display window.&nbsp; Then make the fifth parameter use an expression that uses
+	   of the display window.&nbsp; The fifth parameter should use 
 	   <code>mouseY</code> so that the images grow or shrink vertically as the mouse is moved around 
-	   the window.&nbsp;Show your results to your instructor.
+	   the window.&nbsp;Show your results to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
@@ -312,7 +312,7 @@ float speed = 1.5;
        instead of left and right.&nbsp; There are several changes that need to be made in
 	   the <code>draw</code> function in order for this to happen &mdash; any line that 
 	   refers to <code>x</code> should be changed to use the variable <code>y</code>
-	   instead.&nbsp; The <code>draw</code> function should add <code>speed*direction</code>
+	   instead, in this fashion: the <code>draw</code> function should add <code>speed*direction</code>
 	   to <code>y</code>, then test <code>y</code> to see if it is either greater than
 	   <code>height&ndash;radius</code> or less than zero.&nbsp; The other changes that should be 
 	   made are that the two <code>arc</code> function calls need to have a fixed value for
@@ -331,14 +331,14 @@ float speed = 1.5;
 	   in Chapter 7 to draw the images.&nbsp; You will need to replace the <code>arc</code> statements
 	   in your program with <code>image</code> statements that draw the appropriate 
 	   <code>PImage</code> objects when direction is 1 or not.&nbsp; Show your results 
-	   to your instructor.
+	   to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
   <li> <span class="yellow">
        Add code to your program that causes the direction to be changed whenever the user
 	   clicks the left mouse button.&nbsp; When the user clicks the right mouse button, nothing
-	   should happen.&nbsp; Show your results to your instructor.
+	   should happen.&nbsp; Show your results to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
@@ -426,7 +426,7 @@ void draw() {
 <pre>
 stroke(r, g, b);
 </pre>
-	   Show the results of your programming to your instructor.
+	   Show the results of your programming to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
@@ -468,7 +468,7 @@ void draw() {
 	   time is greater than 7000 milliseconds, subtract one from x.&nbsp; Otherwise, if the 
 	   current time is less than 4000 milliseconds, add one to x.&nbsp; Otherwise, add a
 	   random value between -20 and 20 to x.&nbsp; Then draw an ellipse as was done in
-	   the given program.&nbsp; Run your program and show the results to your instructor.
+	   the given program.&nbsp; Run your program and show the results to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
