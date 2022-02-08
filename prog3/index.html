@@ -71,15 +71,19 @@ void draw() {
 <blockquote>
     First of all, you should change the program so that there are two squares moving on the
 	screen, a red one and a blue one, with the blue one starting at the lower-left corner
-	of the output window.&nbsp; To do this, you will need to declare two more
+	of the output window.&nbsp; To do this, you will need to:
+	<ul>
+		<li>declare two more
 	variables at the top of the program to store the x and y positions of the second square
 	(maybe you could call these variables <code>x2</code> and <code>y2</code>, or you can
-	use other names you would like).&nbsp; These two variables should be set to their proper
-	starting values in your <code>setup</code> function.&nbsp; You can copy all of the code
+			use other names you would like).&nbsp; </li>
+		<li>These two variables should be set to their proper
+			starting values in your <code>setup</code> function.&nbsp; </li>
+		<li>You can copy all of the code
 	in the <code>draw</code> function except the "background(0);" statement and then paste 
 	a copy of that code at the end of <code>draw</code> &mdash; modify the copied code so
 	that it uses the two new variables you added, and so that the second square drawn is
-	blue instead of red.
+			blue instead of red.</li></ul>
 </blockquote>
 
 <strong>Your Task, Step 2:&nbsp; Replace the squares with images</strong>
@@ -97,7 +101,7 @@ void draw() {
 	"piano.png" were used.
 	<br/><br/>
 	When you have the two images saved, use the "Add Files" option of the "Sketch" menu
-	to add them to your program, and then replace each of the <code>fill</code> and the <code>rect</code>
+	to add them to your program, and then replace each set of both the <code>fill</code> and the <code>rect</code>
 	statements in your <code>draw</code> function with an <code>image</code> statement that
 	draws each of your images in a 100 &times; 100 area.
 </blockquote>
