@@ -10,7 +10,7 @@
 <font color="#660066">
 <center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
             Lab Exercise # 5&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
-            Due:&nbsp; February 21, 2022 (at end of class) </h2></center></font>
+            Due:&nbsp; February 21, 2022 (by 11:59 pm on D2L) </h2></center></font>
 
 Topics:&nbsp; Arrays, and a 3D Demo <br/><br/>
 In these lab exercises, instructions with a yellow background indicate a task that should be
@@ -30,7 +30,7 @@ demonstrated to your instructor when completed, in order to earn points for the 
 	   textbook</a>; read the text and try
        the code from Examples 11-1, 11-2 and 11-3 &mdash; actually copy the code from the book and
 	   paste it into the Processing editor window to run the code.&nbsp;DON'T JUST RUN THE CODE &mdash;
-	   try to understand how it works.<br/><br/>
+	   try to understand how it works.**Note: Please use the code below for Example 11-3! The book contains a small error.**<br/><br/>
 	   <b>Exercise 11-1:</b><br/>
 <textarea rows="6" cols="50">
 float x1 = -20;
@@ -79,7 +79,7 @@ void draw() {
 }
 </textarea>
        <br/><br/>
-	   <b>Exercise 11-3:</b><br/>
+	   <b>Exercise 11-3 (please use code below in place of the book's):</b><br/>
 <textarea rows="6" cols="50">
 float[] x = new float[3000];
 
@@ -96,7 +96,7 @@ void draw() {
   background(0);
   for (int i = 0; i &lt; x.length; i++) {
     x[i] += 0.5;
-    float y = i * 0.4;
+    float y = i * 0.04;
     arc(x[i], y, 12, 12, 0.52, 5.76);
   }
 }
@@ -106,15 +106,18 @@ void draw() {
 	   use the "New" button from the Processing Toolbar, and use names such as
 	   <em><b>LAB05a</b></em>, <em><b>LAB05b</b></em>, etc. <br/><br/> </li>
 
-  <li> Modify the program from Example 11-3 so that the array <code>x</code> contains 1000
-	   elements.&nbsp; Then as the second statement in the file, declare a second array named
-	   <code>y</code> as an array of <code>float</code> values that also has 1000 elements.&nbsp;
-	   Next, inside the <code>for</code> loop in the <code>setup</code> function, set the 
-	   value in <code>y[i]</code> to a random value between 0 and 120.&nbsp; Then in the
+  <li> <ul><li>Modify the program from Example 11-3 so that the array <code>x</code> contains 1000
+	  elements.</li>
+	  <li>Then as the second statement in the file, declare a second array named
+		  <code>y</code> as an array of <code>float</code> values that also has 1000 elements.</li>
+	   <li>Next, inside the <code>for</code> loop in the <code>setup</code> function, set the 
+		   value in <code>y[i]</code> to a random value between 0 and 120.</li>
+	  <li>Then in the
 	   <code>draw</code> function, delete the line that starts "<code>float y =</code>", and
 	   then change the second parameter in the <code>arc</code> 
-	   function call so that it is <code>y[i]</code>.&nbsp; Run the program and verify that
-	   a large number of PacMen are moving horizontally across the output window.
+		  function call so that it is <code>y[i]</code></li>
+	  <li>Run the program and verify that
+		  a large number of PacMen are moving horizontally across the output window.</li></ul>
 	   <br><br> </li>
 
   <li> <span class="yellow">
