@@ -174,7 +174,7 @@ void draw() {
   <li> Make the following changes:&nbsp; 
 	  <ul><li>Rename the array called <code>gray</code> so that it
        is named <code>red</code> (you'll need to make six changes to the program to accomplish
-		  this).</li> \
+		  this).</li> 
 		  <li>Next, add two more arrays of <code>float</code> values to the program, one
 			  called <code>green</code> and another called <code>blue</code>.&nbsp; Declare both
 			  of these arrays at the top of the program.</li>
@@ -201,20 +201,25 @@ void draw() {
 
   <li> <span class="yellow">
        Now change the program so that three new specific things are added to the existing
-	   program as the first
+	   program as the <b>first
 	   three actions inside the 
-	   <code>for</code> loop of your <code>draw</code> function.&nbsp; First of all, set
-	   the stroke color to black.&nbsp; Secondly, draw a line from (<code>x[i]</code>, 0) to 
-	   (<code>x[i]</code>, 100).&nbsp; Thirdly, add a randomly-generated value between 0.1 and
+	  <code>for</code> loop</b> of your <code>draw</code> function.&nbsp;Do <b>not</b> delete any existing code!
+	  <ul><li>First of all, set
+		  the stroke color to black.</li>
+		  <li>Secondly, draw a line from (<code>x[i]</code>, 0) to 
+			  (<code>x[i]</code>, 120).</li>
+		  <li>Thirdly, add a randomly-generated value between 0.1 and
 	   4.5 to <code>x[i]</code>.&nbsp; Running the program now should show colored lines moving 
-	   haphazardly off the window to the right.
+			  haphazardly off the window to the right.</li></ul>
 	   <br/><br/>
-	   Then declare a single <code>int</code> variable (not an array) at the top of the 
-	   file named <code>direction</code> and give it a starting value of 1.&nbsp; Change the value
+	   <ul><li>Then declare a single <code>int</code> variable (not an array) at the top of the 
+		   file named <code>direction</code> and give it a starting value of 1.</li> 
+		   <li>Change the value
 	   being added to <code>x[i]</code> in the <code>draw</code> function so that it is 
 	   <code>direction</code> times a 
-	   random value between 0.1 and 4.5.&nbsp; Then copy the following code and paste it into
-	   <code>draw</code> immediately before the final <code>}</code> symbol in your file:
+			   random value between 0.1 and 4.5.</li> 
+		   <li>Then copy the following code and paste it into
+			   <code>draw</code> immediately before the final <code>}</code> symbol in your file:</li></ul>
 <pre>
 if (x[0] > width || x[width-1] &lt; 0) {
   direction = -direction;
