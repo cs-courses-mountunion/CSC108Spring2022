@@ -10,7 +10,7 @@
 <font color="#660066">
 <center><h2>CSC 108&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
             Lab Exercise # 6&nbsp;&nbsp;&nbsp; ---&nbsp;&nbsp;&nbsp;
-            Due:&nbsp; February 28, 2022 (at end of class) </h2></center></font>
+            Due:&nbsp; February 28, 2022 (by 11:59 pm on D2L) </h2></center></font>
 
 Topics:&nbsp; Programmer-Defined Functions, Parameters and Arguments <br/><br/>
 In these lab exercises, instructions with a yellow background indicate a task that should be
@@ -65,21 +65,26 @@ void rollDice(int numSides) {
   <li> <span class="yellow">
        Instead of having separate calls to the <code>rollDice</code> function with different constant numbers
 	   as the argument value, let's use a <code>for</code> loop to call the function repeatedly with different
-	   argument values.&nbsp; Delete the two lines that say "<code>rollDice(20);</code>", and replace them with
+	   argument values.
+	  <ul>
+		  <li>Delete the two lines that say "<code>rollDice(20);</code>", and replace them with
 	   a for loop that makes the loop control variable start at 4, keep going as long as the loop control
 	   variable is less than or equal to 20, and changes the loop control variable by adding 2 every time we
-	   go through the loop.&nbsp; Then change the "6" in the <code>rollDice</code> function call that remains in
-	   your program to be the loop control variable.&nbsp; Don't forget to put a closing curly brace on the line
-	   after the <code>rollDice</code> function call line.&nbsp; When you run this program, you should see 
+			  go through the loop.</li> 
+		  <li>Then change the "6" in the <code>rollDice</code> function call that remains in
+			  your program to be the loop control variable.</li> 
+		  <li>Don't forget to put a closing curly brace on the line
+			  after the <code>rollDice</code> function call line.</li></ul>
+	  When you run this program, you should see 
 	   results from rolling a 4-sided die, a 6-sided die, and so on up to a 20-sided die.&nbsp;
-	   Show your results to your instructor.
+	   Show your results to your instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
   <li> To more easily see the results of our die rolls, let's draw a bar graph that shows the results of the 
-       rolls and the number of sides on the die for each roll.&nbsp; To do this, we'll define a new function in 
-       our program called <code>drawBar</code>.&nbsp; This function will need two parameters, one to 
-	   specify the number of sides on the die, and another to specify the result of the die roll.&nbsp; Copy
+       rolls and the number of sides on the die for each roll.<br/>To do this, we'll define a new function in 
+       our program called <code>drawBar</code>.<br/> This function will need two parameters, one to 
+	   specify the number of sides on the die, and another to specify the result of the die roll.<br/> Copy
 	   the following code and paste it into your program at the very bottom of the file:
 	   <br/>
 <pre>
