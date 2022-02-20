@@ -113,12 +113,15 @@ void rollDice(int numSides) {
 
   <li> <span class="yellow">
        Inside the <code>rollDice</code> function, after printing the line to the Console, call the
-	   <code>drawBar</code> method.&nbsp; For this to work properly, you must specify two things inside
+	   <code>drawBar</code> method.
+	  <ul><li>For this to work properly, you must specify two things inside
 	   the parentheses for the method call; the first value is the number of sides on the die that was rolled,
-	   and the second value is the result of the die roll.&nbsp; If you do this correctly, you will see bars of
+		  and the second value is the result of the die roll.</li>
+		  <li>If you do this correctly, you will see bars of
 	   various heights, with the number of sides on the die shown in white, and the result of the die roll
-	   displayed in red and yellow.&nbsp; When you get this working correctly, show your results to your
-	   instructor.
+			  displayed in red and yellow.</li></ul>
+	  When you get this working correctly, show your results to your
+	   instructor. (3 pts)
 	   </span>
 	   <br><br> </li>
 
@@ -264,13 +267,16 @@ void owl(int x, int y, int g, float s) {
 <br/><br/> </li>
 
   <li> Let's change this latest program so the owls are drawn in random colors.&nbsp; To do this, make 
-       the following changes to the program for Example 9-7:&nbsp; in the <code>draw</code> function,
+       the following changes to the program for Example 9-7:
+	  <ul><li>In the <code>draw</code> function,
        change "gray" to "red", and change the numbers in the call to "random" to be 
-	   "<code>random(36, 188)</code>".&nbsp; Then copy this line that chooses a red value randomly, and paste
+		  "<code>random(36, 188)</code>".</li>
+		  <li>Then copy this line that chooses a red value randomly, and paste
 	   it into the <code>draw</code> method twice more; rename the variables in the copies so that one of
-	   them is named "green" and the other is named "blue".&nbsp; Then in the call to the <code>owl</code> 
+			  them is named "green" and the other is named "blue".</li> 
+		  <li>Then in the call to the <code>owl</code> 
 	   function at the bottom of the loop, change "gray"
-	   to "red, green, blue" &mdash; so now there are six argument values inside the parentheses.<br/><br/>
+			  to "red, green, blue" &mdash; so now there are six argument values inside the parentheses.</li></ul>
 	   
 	   The program won't work at this point, because we have changed the number of values we are sending
 	   to the <b>owl</b> function, so we'll also need to change the definition of that function so it
