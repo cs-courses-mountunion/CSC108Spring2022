@@ -220,19 +220,20 @@ ellipse(345, 50, 10, 10);
 	(210, 60).&nbsp; So we need to change each of the vertex statements in this function to be relative
 	to that point.&nbsp; The first vertex statement in the function is <code>vertex(50,&nbsp;120);</code>.&nbsp;
 	To make this relative to the point (210, 60), we need to change the first statement to be
-	<code>vertex(210-160,&nbsp;60+60);</code>, because 50&nbsp;==&nbsp;210&nbsp;-&nbsp;160, and 
+	<code>vertex(x-160,&nbsp;y+60);</code>, because 50&nbsp;==&nbsp;210&nbsp;-&nbsp;160, and 
 	120&nbsp;==&nbsp;60&nbsp;+&nbsp;60.&nbsp; The second vertex statement in the function is 
 	<code>vertex(100,&nbsp;90);</code>,
-	so it needs to be changed to <code>vertex(210-110,&nbsp;60+30);</code><br/><br/>
+	so it needs to be changed to <code>vertex(x-110,&nbsp;y+30);</code>&nbsp; <em>Note that the fifth vertex corresponds to the tip of the 
+	creature's nose, so its coordinates will simply be</em> <code>(x, y)</code>.<br/><br/>
 	
 	Change the rest of the <code>vertex</code> statements in the <code>drawLeft</code> function so that they
-	are defined relative to the point (210, 60).&nbsp; You will also need to change the <code>ellipse</code>
-	statement so that the first argument is 210 minus something that is equal to 155.&nbsp; If you run this
+	are defined relative to the point (210, 60).&nbsp; You will <b>also</b> need to change the <code>ellipse</code>
+	statement so that the first argument is x minus something that is equal to 155.&nbsp; If you run this
 	version of the program and click the left mouse button, it should work exactly as before.<br/><br/>
 	
-	Now, change all of the "<code>210</code>"s in the <code>vertex</code> statements and the 
+	<!--Now, change all of the "<code>210</code>"s in the <code>vertex</code> statements and the 
 	<code>ellipse</code> statement, replacing them with <code>x</code>.&nbsp; Similarly, change all of the 
-	"<code>60</code>"s to <code>y</code>.&nbsp; Now when you run the program, the bluish creatures will be
+	"<code>60</code>"s to <code>y</code>.&nbsp; -->Now when you run the program, the bluish creatures will be
 	drawn in various screen locations, depending on where the mouse was clicked.<br/><br/>
 	
 	Change the <code>drawRight</code> function in a similar way, so that the greenish creatures are drawn at
