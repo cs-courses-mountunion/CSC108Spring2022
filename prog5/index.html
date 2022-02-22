@@ -218,13 +218,16 @@ ellipse(345, 50, 10, 10);
 	
     In the <code>drawLeft</code> function, the vertex that represents the tip of the creature's nose is
 	(210, 60).&nbsp; So we need to change each of the vertex statements in this function to be relative
-	to that point.&nbsp; The first vertex statement in the function is <code>vertex(50,&nbsp;120);</code>.&nbsp;
+	to that point.
+	<ul><li>The first vertex statement in the function is <code>vertex(50,&nbsp;120);</code>.&nbsp;
 	To make this relative to the point (210, 60), we need to change the first statement to be
 	<code>vertex(x-160,&nbsp;y+60);</code>, because 50&nbsp;==&nbsp;210&nbsp;-&nbsp;160, and 
-	120&nbsp;==&nbsp;60&nbsp;+&nbsp;60.&nbsp; The second vertex statement in the function is 
+		120&nbsp;==&nbsp;60&nbsp;+&nbsp;60.</li>
+		<li>The second vertex statement in the function is 
 	<code>vertex(100,&nbsp;90);</code>,
-	so it needs to be changed to <code>vertex(x-110,&nbsp;y+30);</code>&nbsp; <em>Note that the fifth vertex corresponds to the tip of the 
-	creature's nose, so its coordinates will simply be</em> <code>(x, y)</code>.<br/><br/>
+	so it needs to be changed to <code>vertex(x-110,&nbsp;y+30);</code><li>
+		<li><em>Note that the fifth vertex corresponds to the tip of the 
+			creature's nose, so its coordinates will simply be</em> <code>(x, y)</code>.</li></ul>
 	
 	Change the rest of the <code>vertex</code> statements in the <code>drawLeft</code> function so that they
 	are defined relative to the point (210, 60).&nbsp; You will <b>also</b> need to change the <code>ellipse</code>
